@@ -15,7 +15,6 @@ class ProductSeeder extends Seeder
     {
         \App\Models\Product::create([
             'name' => 'Tribute Pro',
-            'slug' => 'tribute-pro',
             'description' => 'High-performance energy drink with 200mg natural caffeine, L-theanine, and B-vitamins for sustained focus without the crash.',
             'price' => 4.99,
             'original_price' => null,
