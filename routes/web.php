@@ -166,4 +166,40 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    
+    // Admin routes
+    Route::prefix('admin')->name('admin.')->group(function () {
+        // Users management
+        Route::prefix('users')->name('users.')->group(function () {
+            Route::get('/', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->name('create');
+            Route::post('/', [App\Http\Controllers\Admin\UserController::class, 'store'])->name('store');
+            Route::get('/{user}', [App\Http\Controllers\Admin\UserController::class, 'show'])->name('show');
+            Route::get('/{user}/edit', [App\Http\Controllers\Admin\UserController::class, 'edit'])->name('edit');
+            Route::put('/{user}', [App\Http\Controllers\Admin\UserController::class, 'update'])->name('update');
+            Route::delete('/{user}', [App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('destroy');
+        });
+        
+        // Products management
+        Route::prefix('products')->name('products.')->group(function () {
+            Route::get('/', [App\Http\Controllers\Admin\ProductController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create');
+            Route::post('/', [App\Http\Controllers\Admin\ProductController::class, 'store'])->name('store');
+            Route::get('/{product}', [App\Http\Controllers\Admin\ProductController::class, 'show'])->name('show');
+            Route::get('/{product}/edit', [App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('edit');
+            Route::put('/{product}', [App\Http\Controllers\Admin\ProductController::class, 'update'])->name('update');
+            Route::delete('/{product}', [App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('destroy');
+        });
+        
+        // Gallery management
+        Route::prefix('gallery')->name('gallery.')->group(function () {
+            Route::get('/', [App\Http\Controllers\Admin\GalleryController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\GalleryController::class, 'create'])->name('create');
+            Route::post('/', [App\Http\Controllers\Admin\GalleryController::class, 'store'])->name('store');
+            Route::get('/{gallery}', [App\Http\Controllers\Admin\GalleryController::class, 'show'])->name('show');
+            Route::get('/{gallery}/edit', [App\Http\Controllers\Admin\GalleryController::class, 'edit'])->name('edit');
+            Route::put('/{gallery}', [App\Http\Controllers\Admin\GalleryController::class, 'update'])->name('update');
+            Route::delete('/{gallery}', [App\Http\Controllers\Admin\GalleryController::class, 'destroy'])->name('destroy');
+        });
+    });
 });
