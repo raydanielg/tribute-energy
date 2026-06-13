@@ -37,4 +37,21 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Redirect users after login based on their role.
+     *
+     * @return string
+     */
+    protected function redirectPath()
+    {
+        $user = auth()->user();
+
+        // Check if user has admin role
+        if ($user && $user->roles()->where('name', 'admin')->exists()) {
+            return '/dashboard';
+        }
+
+        return '/user/dashboard';
+    }
 }
