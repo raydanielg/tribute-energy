@@ -6,7 +6,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $featuredProducts = \App\Models\Product::where('is_featured', true)->where('is_active', true)->take(4)->get();
     $featuredGallery = \App\Models\Gallery::where('is_featured', true)->where('is_active', true)->orderBy('order')->take(6)->get();
-    return view('landing', compact('featuredProducts', 'featuredGallery'));
+    $heroSections = \App\Models\HeroSection::where('is_active', true)->orderBy('sort_order')->get();
+    $features = \App\Models\Feature::where('is_active', true)->orderBy('sort_order')->get();
+    $testimonials = \App\Models\Testimonial::where('is_active', true)->orderBy('sort_order')->get();
+    return view('landing', compact('featuredProducts', 'featuredGallery', 'heroSections', 'features', 'testimonials'));
 })->name('home');
 
 // Products page
