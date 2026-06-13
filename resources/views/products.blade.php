@@ -280,9 +280,12 @@
                                         @endif
                                         <span class="text-xl font-bold" style="color: #FF8C00;">TZS {{ number_format($product->price) }}</span>
                                     </div>
-                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
-                                        Add to Cart
-                                    </button>
+                                    <form action="{{ route('cart.add', $product->id) }}" method="POST" class="inline">
+                                        @csrf
+                                        <button type="submit" class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                            Add to Cart
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
