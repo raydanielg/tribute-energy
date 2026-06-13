@@ -138,6 +138,16 @@ Route::middleware(['auth'])->group(function () {
             Route::put('/{payment}/confirm', [App\Http\Controllers\Admin\PaymentController::class, 'confirm'])->name('confirm');
         });
 
+        // Hero Sections management
+        Route::prefix('hero-sections')->name('hero-sections.')->group(function () {
+            Route::get('/', [App\Http\Controllers\Admin\HeroSectionController::class, 'index'])->name('index');
+            Route::get('/create', [App\Http\Controllers\Admin\HeroSectionController::class, 'create'])->name('create');
+            Route::post('/', [App\Http\Controllers\Admin\HeroSectionController::class, 'store'])->name('store');
+            Route::get('/{heroSection}/edit', [App\Http\Controllers\Admin\HeroSectionController::class, 'edit'])->name('edit');
+            Route::put('/{heroSection}', [App\Http\Controllers\Admin\HeroSectionController::class, 'update'])->name('update');
+            Route::delete('/{heroSection}', [App\Http\Controllers\Admin\HeroSectionController::class, 'destroy'])->name('destroy');
+        });
+
         // Gallery management
         Route::prefix('gallery')->name('gallery.')->group(function () {
             Route::get('/', [App\Http\Controllers\Admin\GalleryController::class, 'index'])->name('index');
