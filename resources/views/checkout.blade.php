@@ -95,24 +95,58 @@
                     <div class="lg:col-span-2">
                         <div class="bg-white rounded-xl shadow-sm border border-gray-100 mb-6">
                             <div class="p-6 border-b border-gray-100">
+                                <h2 class="text-xl font-bold text-gray-900">Contact Information</h2>
+                            </div>
+                            <div class="p-6">
+                                @auth
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                                            <input type="text" value="{{ auth()->user()->name }}" disabled class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 text-gray-500">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                                            <input type="email" value="{{ auth()->user()->email }}" disabled class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 text-gray-500">
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                        <p class="text-sm text-blue-800">Create an account to track your orders and get better service!</p>
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                                            <input type="text" name="guest_name" value="{{ old('guest_name') }}" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Enter your full name">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                                            <input type="email" name="guest_email" value="{{ old('guest_email') }}" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Enter your email">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                                            <input type="tel" name="guest_phone" value="{{ old('guest_phone') }}" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Enter your phone number">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Password *</label>
+                                            <input type="password" name="guest_password" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Create a password">
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-xl shadow-sm border border-gray-100 mb-6">
+                            <div class="p-6 border-b border-gray-100">
                                 <h2 class="text-xl font-bold text-gray-900">Shipping Information</h2>
                             </div>
                             <div class="p-6">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div class="md:col-span-2">
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                                        <input type="text" value="{{ auth()->user()->name }}" disabled class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 text-gray-500">
-                                    </div>
-                                    <div class="md:col-span-2">
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                                        <input type="email" value="{{ auth()->user()->email }}" disabled class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-gray-50 text-gray-500">
-                                    </div>
-                                    <div class="md:col-span-2">
                                         <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
-                                        <input type="tel" name="phone" value="{{ auth()->user()->phone ?? old('phone') }}" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                                        <input type="tel" name="phone" value="{{ auth()->check() ? (auth()->user()->phone ?? old('phone')) : old('phone') }}" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Enter your phone number">
                                     </div>
                                     <div class="md:col-span-2">
-                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Shipping Address</label>
+                                        <label class="block text-sm font-semibold text-gray-700 mb-2">Shipping Address *</label>
                                         <textarea name="shipping_address" required rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Enter your full shipping address">{{ old('shipping_address') }}</textarea>
                                     </div>
                                     <div class="md:col-span-2">

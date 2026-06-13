@@ -70,10 +70,6 @@ class CartController extends Controller
 
     public function checkout()
     {
-        if (!Auth::check()) {
-            return redirect()->route('login')->with('info', 'Please login to checkout');
-        }
-        
         $cart = session()->get('cart', []);
         
         if (empty($cart)) {
@@ -90,21 +86,42 @@ class CartController extends Controller
 
     public function placeOrder(Request $request)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login')->with('info', 'Please login to place order');
-        }
-        
         $cart = session()->get('cart', []);
         
         if (empty($cart)) {
             return redirect()->route('products')->with('error', 'Your cart is empty');
         }
         
-        $validated = $request->validate([
-            'shipping_address' => 'required|string|min:10',
-            'phone' => 'required|string|min:10|regex:/^[0-9+\s-]+$/',
-            'notes' => 'nullable|string|max:500',
-        ]);
+        // Handle guest registration
+        if (!Auth::check()) {
+            $validated = $request->validate([
+                'guest_name' => 'required|string|max:255',
+                'guest_email' => 'required|email|max:255|unique:users,email',
+                'guest_phone' => 'required|string|min:10',
+                'guest_password' => 'required|string|min:8|confirmed',
+                'shipping_address' => 'required|string|min:10',
+                'phone' => 'required|string|min:10|regex:/^[0-9+\s-]+$/',
+                'notes' => 'nullable|string|max:500',
+            ]);
+            
+            // Create user account
+            $user = \App\Models\User::create([
+                'name' => $validated['guest_name'],
+                'email' => $validated['guest_email'],
+                'phone' => $validated['guest_phone'],
+                'password' => bcrypt($validated['guest_password']),
+                'role_id' => 2, // Default user role
+            ]);
+            
+            // Login the new user
+            Auth::login($user);
+        } else {
+            $validated = $request->validate([
+                'shipping_address' => 'required|string|min:10',
+                'phone' => 'required|string|min:10|regex:/^[0-9+\s-]+$/',
+                'notes' => 'nullable|string|max:500',
+            ]);
+        }
         
         $total = 0;
         foreach ($cart as $item) {
@@ -134,6 +151,6 @@ class CartController extends Controller
         
         session()->forget('cart');
         
-        return redirect()->route('user.orders.show', $order->id)->with('success', 'Order placed successfully!');
+        return redirect()->route('user.orders.show', $order->id)->with('success', 'Order placed successfully! Welcome to Tribute Energy!');
     }
 }
