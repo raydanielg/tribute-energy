@@ -70,35 +70,56 @@
 
         .auth-brand-top {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
         }
 
         .brand-icon {
-            width: 64px;
-            height: 64px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(255, 140, 0, 0.3);
+            border-radius: 20px;
+            box-shadow: 0 12px 32px rgba(255, 140, 0, 0.4);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 12px 32px rgba(255, 140, 0, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 16px 40px rgba(255, 140, 0, 0.5); }
         }
 
         .brand-icon .brand-logo-image {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 12px;
+            padding: 16px;
         }
 
         .brand-name {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -0.03em;
             color: #fff;
+            text-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .brand-slogan {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: rgba(255, 255, 255, 0.95);
             text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #FF8C00, #FFB347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .auth-brand-bottom {
@@ -543,6 +564,7 @@
                         <img src="{{ asset('icons8-dynamics-365-96.png') }}" alt="Tribute Energy Logo" class="brand-logo-image">
                     </div>
                     <span class="brand-name">{{ config('app.name', 'Tribute Energy Limited') }}</span>
+                    <span class="brand-slogan">Smart Energy Everywhere</span>
                 </div>
 
                 <div class="auth-brand-bottom">
