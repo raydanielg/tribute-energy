@@ -119,14 +119,14 @@
             {{-- Products Grid --}}
             <main class="flex-1 min-w-0">
                 {{-- Sort Bar --}}
-                <div class="flex items-center justify-between mb-4 pb-3 border-b border-[#1E1E1E]">
-                    <div class="text-xs text-gray-500">
+                <div class="flex items-center justify-between mb-4 lg:mb-6 pb-3 lg:pb-4 border-b border-[#1E1E1E]">
+                    <div class="text-xs lg:text-sm text-gray-500">
                         Showing <span class="text-white font-rajdhani font-700" x-text="filteredProducts.length"></span> products
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-gray-600 text-[10px] font-rajdhani font-700 tracking-wider uppercase">Sort:</span>
+                    <div class="flex items-center gap-2 lg:gap-3">
+                        <span class="text-gray-600 text-[10px] lg:text-xs font-rajdhani font-700 tracking-wider uppercase">Sort:</span>
                         <select x-model="filters.sort" @change="applyFilters()"
-                                class="bg-[#0D0D0D] border border-[#252525] text-gray-300 text-xs px-3 py-1.5 focus:outline-none focus:border-[#FF6B00] transition-colors cursor-pointer rounded">
+                                class="bg-[#0D0D0D] border border-[#252525] text-gray-300 text-xs lg:text-sm px-3 lg:px-4 py-1.5 lg:py-2 focus:outline-none focus:border-[#FF6B00] transition-colors cursor-pointer rounded">
                             <option value="featured">Featured</option>
                             <option value="price-asc">Price: Low to High</option>
                             <option value="price-desc">Price: High to Low</option>
@@ -137,82 +137,82 @@
                 </div>
 
                 {{-- Loading State --}}
-                <div x-show="loading" class="py-16 text-center">
-                    <div class="inline-block w-10 h-10 border-4 border-[#FF6B00] border-t-transparent rounded-full animate-spin"></div>
-                    <p class="text-gray-500 mt-3 font-rajdhani font-600 text-sm">Loading products...</p>
+                <div x-show="loading" class="py-16 lg:py-20 text-center">
+                    <div class="inline-block w-10 h-10 lg:w-12 lg:h-12 border-4 border-[#FF6B00] border-t-transparent rounded-full animate-spin"></div>
+                    <p class="text-gray-500 mt-3 lg:mt-4 font-rajdhani font-600 text-sm lg:text-base">Loading products...</p>
                 </div>
 
                 {{-- Product Grid --}}
-                <div x-show="!loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div x-show="!loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
                     <template x-for="product in filteredProducts" :key="product.id">
                         <div class="card group" data-aos="fade-up">
                             {{-- Product Visual --}}
-                            <div class="relative overflow-hidden" style="height:220px; background: linear-gradient(145deg, product.color_start, product.color_end);">
+                            <div class="relative overflow-hidden" style="height:220px; background: linear-gradient(145deg, product.color_start, product.color_end);" class="lg:!h-[280px]">
                                 <div class="absolute inset-0 flex flex-col items-center justify-center text-white select-none">
-                                    <div class="font-bebas text-6xl opacity-10 absolute top-1/2 -translate-y-1/2">TE</div>
-                                    <i class="fas fa-bolt text-5xl opacity-60 drop-shadow-2xl relative z-10"></i>
-                                    <span class="font-bebas text-lg mt-2 tracking-wider relative z-10" x-text="product.name"></span>
-                                    <span class="text-[10px] opacity-60 relative z-10 font-rajdhani mt-0.5" x-text="product.flavor"></span>
+                                    <div class="font-bebas text-6xl lg:text-8xl opacity-10 absolute top-1/2 -translate-y-1/2">TE</div>
+                                    <i class="fas fa-bolt text-5xl lg:text-6xl opacity-60 drop-shadow-2xl relative z-10"></i>
+                                    <span class="font-bebas text-lg lg:text-xl mt-2 lg:mt-3 tracking-wider relative z-10" x-text="product.name"></span>
+                                    <span class="text-[10px] lg:text-xs opacity-60 relative z-10 font-rajdhani mt-0.5 lg:mt-1" x-text="product.flavor"></span>
                                 </div>
 
                                 {{-- Tags --}}
-                                <div class="absolute top-2 left-2 flex flex-col gap-1">
+                                <div class="absolute top-2 lg:top-3 left-2 lg:left-3 flex flex-col gap-1 lg:gap-1.5">
                                     <template x-if="product.is_new">
-                                        <div class="product-tag text-white bg-green-600/80 backdrop-blur-sm px-2 py-0.5 text-[10px] font-rajdhani font-700 tracking-wider uppercase rounded">
+                                        <div class="product-tag text-white bg-green-600/80 backdrop-blur-sm px-2 lg:px-3 py-0.5 lg:py-1 text-[10px] lg:text-xs font-rajdhani font-700 tracking-wider uppercase rounded">
                                             New
                                         </div>
                                     </template>
                                     <template x-if="product.is_sale">
-                                        <div class="product-tag text-white bg-red-600/80 backdrop-blur-sm px-2 py-0.5 text-[10px] font-rajdhani font-700 tracking-wider uppercase rounded">
+                                        <div class="product-tag text-white bg-red-600/80 backdrop-blur-sm px-2 lg:px-3 py-0.5 lg:py-1 text-[10px] lg:text-xs font-rajdhani font-700 tracking-wider uppercase rounded">
                                             Sale
                                         </div>
                                     </template>
                                     <template x-if="product.is_featured">
-                                        <div class="product-tag text-white bg-[#FF6B00]/80 backdrop-blur-sm px-2 py-0.5 text-[10px] font-rajdhani font-700 tracking-wider uppercase rounded">
+                                        <div class="product-tag text-white bg-[#FF6B00]/80 backdrop-blur-sm px-2 lg:px-3 py-0.5 lg:py-1 text-[10px] lg:text-xs font-rajdhani font-700 tracking-wider uppercase rounded">
                                             Featured
                                         </div>
                                     </template>
                                 </div>
 
                                 {{-- Wishlist --}}
-                                <button class="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/40 flex items-center justify-center text-white/60 hover:text-[#FF6B00] hover:bg-black/70 transition-all text-xs backdrop-blur-sm">
+                                <button class="absolute top-2 lg:top-3 right-2 lg:right-3 w-7 h-7 lg:w-8 lg:h-8 rounded-full bg-black/40 flex items-center justify-center text-white/60 hover:text-[#FF6B00] hover:bg-black/70 transition-all text-xs lg:text-sm backdrop-blur-sm">
                                     <i class="fas fa-heart"></i>
                                 </button>
 
                                 {{-- Quick Add Slide-up --}}
-                                <div class="absolute bottom-0 inset-x-0 bg-[#FF6B00] py-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300 text-center">
-                                    <button class="font-rajdhani font-700 text-[11px] tracking-wider uppercase text-white w-full"
+                                <div class="absolute bottom-0 inset-x-0 bg-[#FF6B00] py-2.5 lg:py-3.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300 text-center">
+                                    <button class="font-rajdhani font-700 text-[11px] lg:text-sm tracking-wider uppercase text-white w-full"
                                             @click="addToCart(product)">
-                                        <i class="fas fa-shopping-bag mr-1.5"></i> Add to Cart
+                                        <i class="fas fa-shopping-bag mr-1.5 lg:mr-2"></i> Add to Cart
                                     </button>
                                 </div>
                             </div>
 
                             {{-- Card Body --}}
-                            <div class="p-4">
-                                <div class="flex items-start justify-between mb-1">
+                            <div class="p-4 lg:p-5">
+                                <div class="flex items-start justify-between mb-1 lg:mb-2">
                                     <div>
-                                        <h3 class="font-rajdhani font-700 text-sm leading-tight" x-text="product.name"></h3>
-                                        <p class="text-gray-500 text-[10px] mt-0.5" x-text="product.flavor"></p>
+                                        <h3 class="font-rajdhani font-700 text-sm lg:text-base leading-tight" x-text="product.name"></h3>
+                                        <p class="text-gray-500 text-[10px] lg:text-xs mt-0.5 lg:mt-1" x-text="product.flavor"></p>
                                     </div>
                                     <div class="text-right">
                                         <template x-if="product.original_price">
-                                            <span class="font-bebas text-xs text-gray-500 line-through block" x-text="'$' + product.original_price"></span>
+                                            <span class="font-bebas text-xs lg:text-sm text-gray-500 line-through block" x-text="'$' + product.original_price"></span>
                                         </template>
-                                        <span class="font-bebas text-xl text-[#FF6B00]" x-text="'$' + product.price"></span>
+                                        <span class="font-bebas text-xl lg:text-2xl text-[#FF6B00]" x-text="'$' + product.price"></span>
                                     </div>
                                 </div>
-                                <p class="text-gray-600 text-[10px] font-rajdhani font-600 tracking-wider uppercase mt-1" x-text="product.size"></p>
-                                <div class="flex items-center justify-between mt-2 pt-2 border-t border-[#1A1A1A]">
-                                    <div class="flex items-center gap-1">
-                                        <div class="stars text-[10px]">
+                                <p class="text-gray-600 text-[10px] lg:text-xs font-rajdhani font-600 tracking-wider uppercase mt-1 lg:mt-2" x-text="product.size"></p>
+                                <div class="flex items-center justify-between mt-2 lg:mt-3 pt-2 lg:pt-3 border-t border-[#1A1A1A]">
+                                    <div class="flex items-center gap-1 lg:gap-1.5">
+                                        <div class="stars text-[10px] lg:text-xs">
                                             <template x-for="i in 5">
                                                 <i class="fas fa-star" :style="i <= product.rating ? '' : 'opacity:0.2'"></i>
                                             </template>
                                         </div>
-                                        <span class="text-gray-500 text-[10px]" x-text="product.reviews"></span>
+                                        <span class="text-gray-500 text-[10px] lg:text-xs" x-text="product.reviews"></span>
                                     </div>
-                                    <button @click="addToCart(product)" class="w-7 h-7 flex items-center justify-center bg-[#1A1A1A] hover:bg-[#FF6B00] transition-colors text-gray-400 hover:text-white text-xs rounded">
+                                    <button @click="addToCart(product)" class="w-7 h-7 lg:w-8 lg:h-8 flex items-center justify-center bg-[#1A1A1A] hover:bg-[#FF6B00] transition-colors text-gray-400 hover:text-white text-xs lg:text-sm rounded">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
@@ -222,14 +222,14 @@
                 </div>
 
                 {{-- Empty State --}}
-                <div x-show="!loading && filteredProducts.length === 0" class="py-16 text-center">
-                    <i class="fas fa-search text-3xl text-[#252525] mb-3 block"></i>
-                    <p class="text-gray-500 font-rajdhani font-600 text-sm">No products found</p>
-                    <button @click="resetFilters()" class="mt-3 text-[#FF6B00] hover:text-white transition-colors text-xs font-rajdhani font-700 tracking-wider uppercase">
+                <div x-show="!loading && filteredProducts.length === 0" class="py-16 lg:py-20 text-center">
+                    <i class="fas fa-search text-3xl lg:text-4xl text-[#252525] mb-3 lg:mb-4 block"></i>
+                    <p class="text-gray-500 font-rajdhani font-600 text-sm lg:text-base">No products found</p>
+                    <button @click="resetFilters()" class="mt-3 lg:mt-4 text-[#FF6B00] hover:text-white transition-colors text-xs lg:text-sm font-rajdhani font-700 tracking-wider uppercase">
                         Clear Filters
                     </button>
                 </div>
-            </div>
+            </main>
         </div>
     </section>
 
