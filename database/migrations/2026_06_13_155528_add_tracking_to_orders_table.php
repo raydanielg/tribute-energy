@@ -16,9 +16,7 @@ class AddTrackingToOrdersTable extends Migration
         Schema::table('orders', function (Blueprint $table) {
             $table->string('tracking_number')->nullable()->after('payment_status');
             $table->timestamp('estimated_delivery')->nullable()->after('tracking_number');
-            $table->timestamp('shipped_at')->nullable()->after('estimated_delivery');
-            $table->timestamp('delivered_at')->nullable()->after('shipped_at');
-            $table->string('carrier')->nullable()->after('delivered_at');
+            $table->string('carrier')->nullable()->after('estimated_delivery');
         });
     }
 
@@ -30,7 +28,7 @@ class AddTrackingToOrdersTable extends Migration
     public function down()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->dropColumn(['tracking_number', 'estimated_delivery', 'shipped_at', 'delivered_at', 'carrier']);
+            $table->dropColumn(['tracking_number', 'estimated_delivery', 'carrier']);
         });
     }
 }
