@@ -14,7 +14,9 @@ class FixPriceFieldInProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            // Ensure price field is properly set as decimal
+            $table->decimal('price', 15, 2)->default(0.00)->change();
+            $table->decimal('original_price', 15, 2)->nullable()->change();
         });
     }
 
@@ -26,7 +28,8 @@ class FixPriceFieldInProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->decimal('price', 15, 2)->change();
+            $table->decimal('original_price', 15, 2)->nullable()->change();
         });
     }
 }
