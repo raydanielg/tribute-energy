@@ -90,6 +90,26 @@
                         {{ $message }}
                     </div>
                 @enderror
+                @error('guest_name')
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                        {{ $message }}
+                    </div>
+                @enderror
+                @error('guest_email')
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                        {{ $message }}
+                    </div>
+                @enderror
+                @error('guest_phone')
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                        {{ $message }}
+                    </div>
+                @enderror
+                @error('guest_password')
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+                        {{ $message }}
+                    </div>
+                @enderror
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     <div class="lg:col-span-2">
@@ -129,6 +149,10 @@
                                         <div class="md:col-span-2">
                                             <label class="block text-sm font-semibold text-gray-700 mb-2">Password *</label>
                                             <input type="password" name="guest_password" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Create a password">
+                                        </div>
+                                        <div class="md:col-span-2">
+                                            <label class="block text-sm font-semibold text-gray-700 mb-2">Confirm Password *</label>
+                                            <input type="password" name="guest_password_confirmation" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Confirm your password">
                                         </div>
                                     </div>
                                 @endif
