@@ -2,7 +2,7 @@
 
 @section('form-header')
     <div class="flex justify-center mb-8">
-        <img src="{{ asset('logo.png') }}" alt="Tribute Energy Logo" class="h-12 w-auto">
+        <img src="{{ asset('logo.png') }}" alt="Tribute Energy Logo" class="h-8 w-auto">
     </div>
     <h2 class="auth-form-title">Welcome back</h2>
     <p class="auth-form-subtitle">Sign in to your Tribute Energy account to continue.</p>
