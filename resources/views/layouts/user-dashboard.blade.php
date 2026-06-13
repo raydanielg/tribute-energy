@@ -103,12 +103,12 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gradient-to-br from-gray-50 to-orange-50">
     @include('partials.landing-header')
 
     <div class="flex min-h-screen pt-20">
         {{-- Sidebar --}}
-        <aside class="w-64 bg-white border-r border-gray-200 fixed h-full overflow-y-auto hidden lg:block">
+        <aside class="w-72 sidebar-gradient border-r border-orange-100 fixed h-full overflow-y-auto hidden lg:block shadow-xl">
             <div class="p-6">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-12 h-12 rounded-full flex items-center justify-center font-semibold text-white" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
