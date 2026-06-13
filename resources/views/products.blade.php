@@ -276,7 +276,7 @@
                         </div>
 
                         {{-- Product 2 --}}
-                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-product-id="2" data-product-name="Solar Water Pump 2HP" data-product-price="1200000" data-product-color="linear-gradient(135deg, #dbeafe, #bfdbfe)">
                             <div class="relative h-56 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
                                 <div class="w-32 h-32 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe);">
                                     <svg class="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -293,7 +293,7 @@
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-xl font-bold" style="color: #FF8C00;">TZS 1,200,000</span>
-                                    <button class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                         Add to Cart
                                     </button>
                                 </div>
@@ -301,7 +301,7 @@
                         </div>
 
                         {{-- Product 3 --}}
-                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-product-id="3" data-product-name="Hybrid Inverter 5kW" data-product-price="2500000" data-product-color="linear-gradient(135deg, #dcfce7, #bbf7d0)">
                             <div class="relative h-56 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
                                 <div class="w-32 h-32 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #dcfce7, #bbf7d0);">
                                     <svg class="w-16 h-16 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -319,7 +319,7 @@
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-xl font-bold" style="color: #FF8C00;">TZS 2,500,000</span>
-                                    <button class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                         Add to Cart
                                     </button>
                                 </div>
@@ -327,7 +327,7 @@
                         </div>
 
                         {{-- Product 4 --}}
-                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-product-id="4" data-product-name="Solar Battery 200Ah" data-product-price="850000" data-product-color="linear-gradient(135deg, #f3e8ff, #e9d5ff)">
                             <div class="relative h-56 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
                                 <div class="w-32 h-32 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #f3e8ff, #e9d5ff);">
                                     <svg class="w-16 h-16 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -344,7 +344,7 @@
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-xl font-bold" style="color: #FF8C00;">TZS 850,000</span>
-                                    <button class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                         Add to Cart
                                     </button>
                                 </div>
@@ -352,7 +352,7 @@
                         </div>
 
                         {{-- Product 5 --}}
-                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-product-id="5" data-product-name="Solar Controller 30A" data-product-price="350000" data-product-color="linear-gradient(135deg, #fef9c3, #fef08a)">
                             <div class="relative h-56 bg-gradient-to-br from-yellow-50 to-yellow-100 flex items-center justify-center">
                                 <div class="w-32 h-32 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #fef9c3, #fef08a);">
                                     <svg class="w-16 h-16 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -369,7 +369,7 @@
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-xl font-bold" style="color: #FF8C00;">TZS 350,000</span>
-                                    <button class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                         Add to Cart
                                     </button>
                                 </div>
@@ -377,7 +377,7 @@
                         </div>
 
                         {{-- Product 6 --}}
-                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-product-id="6" data-product-name="Complete Solar Kit" data-product-price="4200000" data-product-color="linear-gradient(135deg, #fee2e2, #fecaca)">
                             <div class="relative h-56 bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
                                 <div class="w-32 h-32 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #fee2e2, #fecaca);">
                                     <svg class="w-16 h-16 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -398,7 +398,7 @@
                                         <span class="text-sm text-gray-400 line-through">TZS 5,000,000</span>
                                         <span class="text-xl font-bold ml-2" style="color: #FF8C00;">TZS 4,200,000</span>
                                     </div>
-                                    <button class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                         Add to Cart
                                     </button>
                                 </div>
@@ -406,7 +406,7 @@
                         </div>
 
                         {{-- Product 7 --}}
-                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-product-id="7" data-product-name="Submersible Pump 3HP" data-product-price="1800000" data-product-color="linear-gradient(135deg, #e0e7ff, #c7d2fe)">
                             <div class="relative h-56 bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center">
                                 <div class="w-32 h-32 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #e0e7ff, #c7d2fe);">
                                     <svg class="w-16 h-16 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -423,7 +423,7 @@
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-xl font-bold" style="color: #FF8C00;">TZS 1,800,000</span>
-                                    <button class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                         Add to Cart
                                     </button>
                                 </div>
@@ -431,7 +431,7 @@
                         </div>
 
                         {{-- Product 8 --}}
-                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="product-card bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer" data-product-id="8" data-product-name="Mounting Structure" data-product-price="280000" data-product-color="linear-gradient(135deg, #fce7f3, #fbcfe8)">
                             <div class="relative h-56 bg-gradient-to-br from-pink-50 to-pink-100 flex items-center justify-center">
                                 <div class="w-32 h-32 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #fce7f3, #fbcfe8);">
                                     <svg class="w-16 h-16 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -448,7 +448,7 @@
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="text-xl font-bold" style="color: #FF8C00;">TZS 280,000</span>
-                                    <button class="px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                                    <button class="add-to-cart-btn px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                         Add to Cart
                                     </button>
                                 </div>
