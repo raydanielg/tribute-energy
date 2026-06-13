@@ -102,28 +102,6 @@
             padding: 16px;
         }
 
-        .brand-name {
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: -0.03em;
-            color: #fff;
-            text-shadow: 0 4px 16px rgba(0,0,0,0.3);
-            line-height: 1.1;
-        }
-
-        .brand-slogan {
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            color: rgba(255, 255, 255, 0.95);
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            text-transform: uppercase;
-            background: linear-gradient(90deg, #FF8C00, #FFB347);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .auth-brand-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.3);
             padding-top: 1.25rem;
@@ -574,7 +552,7 @@
                         <a href="#">Cookie Policy</a>
                     </div>
                     <div class="auth-brand-copy">
-                        &copy; {{ date('Y') }} <span>{{ config('app.name', 'Tribute Energy Limited') }}</span>. All rights reserved.
+                        &copy; {{ date('Y') }}. All rights reserved.
                     </div>
                 </div>
             </div>
