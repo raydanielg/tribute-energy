@@ -1,9 +1,13 @@
 <section class="relative min-h-screen flex flex-col justify-center overflow-hidden hero-section" style="padding-top: 68px;">
 
     {{-- Animated wave/grid background --}}
-    <div class="absolute inset-0 hero-bg">
-        {{-- Deep gradient base --}}
-        <div class="absolute inset-0" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 55%, #1a5f7a 75%, #FF8C00 100%);"></div>
+    <div class="absolute inset-0 hero-bg" style="position: absolute; inset: 0; overflow: hidden;">
+        {{-- Video Background --}}
+        <video id="hero-video" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; background: #1a1a2e;">
+        </video>
+
+        {{-- Video Overlay for gradient and effects --}}
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(26, 26, 46, 0.92) 0%, rgba(22, 33, 62, 0.92) 30%, rgba(15, 52, 96, 0.92) 55%, rgba(26, 95, 122, 0.92) 75%, rgba(255, 140, 0, 0.92) 100%);"></div>
 
         {{-- Animated grid lines --}}
         <div class="absolute inset-0 hero-grid"></div>
@@ -271,3 +275,55 @@
         to   { opacity: 1; }
     }
 </style>
+
+<script>
+(function () {
+    const videos = [
+        '{{ asset("1476771_People_Technology_1280x720.mp4") }}',
+        '{{ asset("1477967_People_Technology_1280x720.mp4") }}',
+        '{{ asset("1477986_People_Technology_1280x720.mp4") }}'
+    ];
+    
+    let currentVideoIndex = 0;
+    const videoElement = document.getElementById('hero-video');
+    
+    function playVideo(index) {
+        const video = videos[index];
+        videoElement.src = video;
+        videoElement.load();
+        
+        const playPromise = videoElement.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                console.log('Video playing:', video);
+            }).catch(error => {
+                console.log('Video play error:', error);
+                // Try next video
+                const nextIndex = (index + 1) % videos.length;
+                if (nextIndex !== currentVideoIndex) {
+                    currentVideoIndex = nextIndex;
+                    setTimeout(() => playVideo(nextIndex), 500);
+                }
+            });
+        }
+    }
+    
+    if (videoElement) {
+        // Start with first video
+        playVideo(0);
+        
+        // Cycle to next video when current one ends
+        videoElement.addEventListener('ended', () => {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            playVideo(currentVideoIndex);
+        });
+        
+        // Handle errors
+        videoElement.addEventListener('error', () => {
+            console.log('Video error, switching to next');
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            setTimeout(() => playVideo(currentVideoIndex), 500);
+        });
+    }
+})();
+</script>

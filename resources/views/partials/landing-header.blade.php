@@ -4,9 +4,7 @@
 
             {{-- Logo --}}
             <a href="/" class="flex items-center space-x-2.5 flex-shrink-0">
-                <div class="w-9 h-9 rounded-xl flex items-center justify-center shadow-md" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
-                    <img src="{{ asset('logo.png') }}" alt="Tribute Energy Logo" class="h-6 w-6 object-contain">
-                </div>
+                <img src="{{ asset('logo.png') }}" alt="Tribute Energy Logo" class="h-12 w-auto object-contain" style="filter: brightness(0);">
                 <span class="text-xl font-bold text-gray-900 tracking-tight">Tribute Energy</span>
             </a>
 
