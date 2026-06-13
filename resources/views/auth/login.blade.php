@@ -1,8 +1,8 @@
 @extends('layouts.auth')
 
 @section('form-header')
-    <div class="flex justify-center mb-6">
-        <img src="{{ asset('logo.png') }}" alt="Tribute Energy Logo" class="h-6 w-auto opacity-90">
+    <div class="flex justify-center mb-8">
+        <img src="{{ asset('logo.png') }}" alt="Tribute Energy Logo" class="h-16 w-auto">
     </div>
     <h2 class="auth-form-title">Welcome back</h2>
     <p class="auth-form-subtitle">Sign in to your Tribute Energy account to continue.</p>
