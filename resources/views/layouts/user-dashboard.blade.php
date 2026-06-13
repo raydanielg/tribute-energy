@@ -74,6 +74,33 @@
         html {
             scroll-behavior: smooth;
         }
+        .sidebar-gradient {
+            background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);
+        }
+        .nav-item-active {
+            background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+        }
+        .nav-item-active:hover {
+            background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+            color: white;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%);
+            border: 1px solid #ffedd5;
+        }
+        .mobile-sidebar {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
+        }
     </style>
 </head>
 <body class="bg-gray-50">
