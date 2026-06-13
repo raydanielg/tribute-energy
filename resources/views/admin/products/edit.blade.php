@@ -72,7 +72,7 @@
     </div>
 </div>
 
-<form action="{{ route('admin.products.update', $product) }}" method="POST">
+<form action="{{ route('admin.products.update', $product) }}" method="POST" enctype="multipart/form-data">
     @csrf @method('PUT')
 
     <div class="form-layout">
@@ -120,6 +120,42 @@
                     <div class="form-group">
                         <label class="form-label">Reviews Text</label>
                         <input type="text" name="reviews" class="form-input" value="{{ old('reviews', $product->reviews) }}" placeholder="(1,200 reviews)">
+                    </div>
+                </div>
+            </div>
+
+            {{-- Product Images --}}
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <h3 class="card-title">Product Images</h3>
+                </div>
+                <div class="card-body">
+                    @if($product->image)
+                    <div class="form-group">
+                        <label class="form-label">Current Main Image</label>
+                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="w-32 h-32 rounded-lg object-cover">
+                    </div>
+                    @endif
+                    <div class="form-group">
+                        <label class="form-label">Replace Main Image</label>
+                        <input type="file" name="image" class="form-input" accept="image/*">
+                        <div class="form-hint">Leave empty to keep current image</div>
+                    </div>
+                    @if($product->images && is_array($product->images))
+                    <div class="form-group">
+                        <label class="form-label">Current Additional Images</label>
+                        <div class="flex gap-2 flex-wrap">
+                            @foreach($product->images as $image)
+                            <img src="{{ asset($image) }}" alt="{{ $product->name }}" class="w-20 h-20 rounded-lg object-cover">
+                            @endforeach
+                        </div>
+                    </div>
+                    @endif
+                    <div class="form-group">
+                        <label class="form-label">Replace Additional Images</label>
+                        <input type="file" name="images[]" class="form-input" accept="image/*" multiple>
+                        <div class="form-hint">Leave empty to keep current images</div>
                     </div>
                 </div>
             </div>

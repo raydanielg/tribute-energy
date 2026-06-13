@@ -76,7 +76,7 @@
     </div>
 </div>
 
-<form action="{{ route('admin.products.store') }}" method="POST" id="productForm">
+<form action="{{ route('admin.products.store') }}" method="POST" id="productForm" enctype="multipart/form-data">
     @csrf
 
     <div class="form-layout">
