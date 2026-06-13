@@ -46,6 +46,12 @@
                     <p class="text-xs text-gray-500 mt-1">PNG, JPG, GIF up to 2MB</p>
                 </div>
 
+                <div class="md:col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Video URL</label>
+                    <input type="url" name="video_url" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="https://youtube.com/watch?v=... or https://vimeo.com/...">
+                    <p class="text-xs text-gray-500 mt-1">YouTube or Vimeo video URL (optional)</p>
+                </div>
+
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Sort Order</label>
                     <input type="number" name="sort_order" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500" placeholder="0" min="0">
