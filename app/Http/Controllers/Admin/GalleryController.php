@@ -24,12 +24,19 @@ class GalleryController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'category' => 'nullable|string|max:100',
             'is_featured' => 'boolean',
             'order' => 'integer',
             'is_active' => 'boolean',
         ]);
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/gallery'), $imageName);
+            $validated['image'] = 'uploads/gallery/' . $imageName;
+        }
 
         Gallery::create($validated);
 
@@ -51,12 +58,24 @@ class GalleryController extends Controller
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'image' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'category' => 'nullable|string|max:100',
             'is_featured' => 'boolean',
             'order' => 'integer',
             'is_active' => 'boolean',
         ]);
+
+        if ($request->hasFile('image')) {
+            // Delete old image
+            if ($gallery->image && file_exists(public_path($gallery->image))) {
+                unlink(public_path($gallery->image));
+            }
+
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $image->move(public_path('uploads/gallery'), $imageName);
+            $validated['image'] = 'uploads/gallery/' . $imageName;
+        }
 
         $gallery->update($validated);
 
