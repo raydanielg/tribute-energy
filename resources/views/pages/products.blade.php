@@ -6,17 +6,17 @@
 @section('content')
 
     {{-- Page Hero --}}
-    <section class="relative pt-24 pb-12 overflow-hidden">
+    <section class="relative pt-24 pb-12 lg:pt-32 lg:pb-16 overflow-hidden">
         <div class="absolute inset-0 z-0"
              style="background: url('{{ asset('hero-bg.jpg') }}') center/cover no-repeat; opacity: 0.05;"></div>
         <div class="absolute inset-0 z-0" style="background: linear-gradient(180deg, #0A0A0A 0%, rgba(10,10,10,0.9) 50%, #0A0A0A 100%);"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-5 lg:px-8">
-            <div class="section-label mb-2">Our Store</div>
-            <h1 class="font-bebas text-5xl lg:text-6xl leading-none">
+            <div class="section-label mb-2 lg:mb-3">Our Store</div>
+            <h1 class="font-bebas text-5xl lg:text-7xl xl:text-8xl leading-none">
                 SHOP <span class="text-gradient">ALL</span> PRODUCTS
             </h1>
-            <div class="divider mt-3"></div>
-            <p class="text-gray-400 mt-3 max-w-xl text-sm leading-relaxed">
+            <div class="divider mt-3 lg:mt-4"></div>
+            <p class="text-gray-400 mt-3 lg:mt-4 max-w-xl text-sm lg:text-base leading-relaxed">
                 Premium energy drinks, performance powders, and bundle packs — engineered to fuel every kind of athlete.
             </p>
         </div>
