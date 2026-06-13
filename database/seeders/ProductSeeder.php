@@ -14,159 +14,186 @@ class ProductSeeder extends Seeder
     public function run()
     {
         \App\Models\Product::create([
-            'name' => 'Solar Panel 300W',
-            'description' => 'High-efficiency monocrystalline solar panel designed for both residential and commercial applications. Features advanced PERC technology for maximum power output and durability in all weather conditions.',
-            'price' => 450000.00,
-            'color' => 'linear-gradient(135deg, #fff7ed, #ffedd5)',
+            'name' => 'Tribute Pro',
+            'description' => 'High-performance energy drink with 200mg natural caffeine, L-theanine, and B-vitamins for sustained focus without the crash.',
+            'price' => 4.99,
+            'original_price' => null,
+            'color' => 'linear-gradient(135deg, #FF6B00, #FFB800)',
             'rating' => 5,
             'reviews' => 24,
             'specs' => json_encode([
-                'Power Output: 300W',
-                'Type: Monocrystalline',
-                'Efficiency: 18.5%',
-                'Dimensions: 1650 x 992 x 35mm',
-                'Weight: 18.5kg',
-                'Warranty: 25 years'
+                'Caffeine: 200mg',
+                'L-Theanine: 200mg',
+                'B-Vitamins: B3, B6, B12',
+                'Size: 12oz can',
+                'Calories: 10',
+                'Sugar: 0g'
             ]),
-            'category' => 'solar-panels',
+            'category' => 'drink',
+            'is_featured' => true,
+            'is_new' => false,
+            'is_sale' => false,
+            'is_active' => true
+        ]);
+
+        \App\Models\Product::create([
+            'name' => 'Tribute Zero',
+            'description' => 'Zero-calorie energy drink with clean caffeine and no artificial sweeteners. Perfect for fasting and keto diets.',
+            'price' => 4.99,
+            'original_price' => null,
+            'color' => 'linear-gradient(135deg, #00D4FF, #0099CC)',
+            'rating' => 5,
+            'reviews' => 18,
+            'specs' => json_encode([
+                'Caffeine: 200mg',
+                'Calories: 0',
+                'Sugar: 0g',
+                'Size: 12oz can',
+                'Sweetener: Stevia',
+                'Flavor: Citrus'
+            ]),
+            'category' => 'drink',
+            'is_featured' => true,
             'is_new' => true,
+            'is_sale' => false,
             'is_active' => true
         ]);
 
         \App\Models\Product::create([
-            'name' => 'Solar Water Pump 2HP',
-            'description' => 'Efficient solar-powered water pump perfect for irrigation and domestic water supply. Works directly with solar panels without batteries, making it cost-effective and environmentally friendly.',
-            'price' => 1200000.00,
-            'color' => 'linear-gradient(135deg, #dbeafe, #bfdbfe)',
-            'rating' => '★★★★★',
-            'reviews' => '(18 reviews)',
+            'name' => 'Tribute Powder',
+            'description' => 'Concentrated energy powder that mixes with water. Portable and customizable strength for your perfect energy boost.',
+            'price' => 29.99,
+            'original_price' => 39.99,
+            'color' => 'linear-gradient(135deg, #FF6B00, #FF4500)',
+            'rating' => 5,
+            'reviews' => 32,
             'specs' => json_encode([
-                'Power: 2HP',
-                'Flow Rate: 10-15 m³/h',
-                'Head: 30-50m',
-                'Voltage: 24V DC',
-                'IP Rating: IP68',
-                'Warranty: 2 years'
+                'Servings: 30',
+                'Caffeine: 200mg/serving',
+                'L-Theanine: 200mg/serving',
+                'Flavor: Orange',
+                'Mixes with: Water',
+                'Portable: Yes'
             ]),
-            'category' => 'water-pumps',
-            'is_active' => true
-        ]);
-
-        \App\Models\Product::create([
-            'name' => 'Hybrid Inverter 5kW',
-            'description' => 'Advanced hybrid inverter for seamless switching between solar and grid power. Features MPPT technology for maximum solar harvest and pure sine wave output for sensitive electronics.',
-            'price' => 2500000.00,
-            'color' => 'linear-gradient(135deg, #dcfce7, #bbf7d0)',
-            'rating' => '★★★★★',
-            'reviews' => '(32 reviews)',
-            'specs' => json_encode([
-                'Capacity: 5kW',
-                'Type: Hybrid',
-                'Input Voltage: 48V DC',
-                'Output: 230V AC',
-                'Efficiency: 95%',
-                'Warranty: 5 years'
-            ]),
-            'category' => 'inverters',
+            'category' => 'powder',
             'is_featured' => true,
-            'is_active' => true
-        ]);
-
-        \App\Models\Product::create([
-            'name' => 'Solar Battery 200Ah',
-            'description' => 'Deep cycle solar battery designed for energy storage and backup power. Features long cycle life and maintenance-free operation for reliable performance.',
-            'price' => 850000.00,
-            'color' => 'linear-gradient(135deg, #f3e8ff, #e9d5ff)',
-            'rating' => '★★★★',
-            'reviews' => '(15 reviews)',
-            'specs' => json_encode([
-                'Capacity: 200Ah',
-                'Voltage: 12V',
-                'Type: Deep Cycle',
-                'Cycle Life: 1500 cycles',
-                'Weight: 55kg',
-                'Warranty: 3 years'
-            ]),
-            'category' => 'batteries',
-            'is_active' => true
-        ]);
-
-        \App\Models\Product::create([
-            'name' => 'Solar Controller 30A',
-            'description' => 'MPPT solar charge controller for optimal battery charging efficiency. Maximizes power harvest from solar panels and protects batteries from overcharging.',
-            'price' => 350000.00,
-            'color' => 'linear-gradient(135deg, #fef9c3, #fef08a)',
-            'rating' => '★★★★',
-            'reviews' => '(12 reviews)',
-            'specs' => json_encode([
-                'Current: 30A',
-                'Type: MPPT',
-                'Voltage: 12V/24V',
-                'Efficiency: 98%',
-                'Display: LCD',
-                'Warranty: 2 years'
-            ]),
-            'category' => 'controllers',
-            'is_active' => true
-        ]);
-
-        \App\Models\Product::create([
-            'name' => 'Complete Solar Kit',
-            'description' => 'All-in-one solar kit with everything you need for a complete solar installation. Includes panels, inverter, battery, controller, and mounting hardware.',
-            'price' => 4200000.00,
-            'original_price' => 5000000.00,
-            'color' => 'linear-gradient(135deg, #fee2e2, #fecaca)',
-            'rating' => '★★★★★',
-            'reviews' => '(45 reviews)',
-            'specs' => json_encode([
-                'Solar Panels: 4x 300W',
-                'Inverter: 3kW Hybrid',
-                'Battery: 200Ah',
-                'Controller: 40A MPPT',
-                'Mounting: Complete set',
-                'Warranty: 2-5 years'
-            ]),
-            'category' => 'kits',
-            'is_featured' => true,
+            'is_new' => false,
             'is_sale' => true,
             'is_active' => true
         ]);
 
         \App\Models\Product::create([
-            'name' => 'Submersible Pump 3HP',
-            'description' => 'Deep well submersible pump designed for agricultural and domestic water supply. Highly efficient and reliable for deep water extraction.',
-            'price' => 1800000.00,
-            'color' => 'linear-gradient(135deg, #e0e7ff, #c7d2fe)',
-            'rating' => '★★★★',
-            'reviews' => '(21 reviews)',
+            'name' => 'Tribute Berry',
+            'description' => 'Fruity energy drink with natural berry flavors and the same powerful energy formula as Tribute Pro.',
+            'price' => 4.99,
+            'original_price' => null,
+            'color' => 'linear-gradient(135deg, #FF6B6B, #FF4444)',
+            'rating' => 4,
+            'reviews' => 15,
             'specs' => json_encode([
-                'Power: 3HP',
-                'Flow Rate: 15-20 m³/h',
-                'Head: 50-80m',
-                'Voltage: 380V AC',
-                'IP Rating: IP68',
-                'Warranty: 2 years'
+                'Caffeine: 200mg',
+                'L-Theanine: 200mg',
+                'Flavor: Mixed Berry',
+                'Size: 12oz can',
+                'Calories: 15',
+                'Sugar: 2g'
             ]),
-            'category' => 'water-pumps',
+            'category' => 'drink',
+            'is_featured' => false,
+            'is_new' => true,
+            'is_sale' => false,
             'is_active' => true
         ]);
 
         \App\Models\Product::create([
-            'name' => 'Mounting Structure',
-            'description' => 'Durable aluminum mounting structure for solar panel installation. Corrosion-resistant and designed for easy installation on various roof types.',
-            'price' => 280000.00,
-            'color' => 'linear-gradient(135deg, #fce7f3, #fbcfe8)',
-            'rating' => '★★★★',
-            'reviews' => '(9 reviews)',
+            'name' => 'Tribute Citrus',
+            'description' => 'Refreshing citrus energy drink with lemon-lime flavor and electrolytes for hydration.',
+            'price' => 4.99,
+            'original_price' => null,
+            'color' => 'linear-gradient(135deg, #FFD700, #FFA500)',
+            'rating' => 4,
+            'reviews' => 12,
             'specs' => json_encode([
-                'Material: Aluminum',
-                'Panels: Up to 6x',
-                'Type: Roof Mount',
-                'Weight Capacity: 200kg',
-                'Finish: Anodized',
-                'Warranty: 10 years'
+                'Caffeine: 200mg',
+                'L-Theanine: 200mg',
+                'Flavor: Lemon-Lime',
+                'Size: 12oz can',
+                'Electrolytes: Yes',
+                'Calories: 10'
             ]),
-            'category' => 'accessories',
+            'category' => 'drink',
+            'is_featured' => false,
+            'is_new' => false,
+            'is_sale' => false,
+            'is_active' => true
+        ]);
+
+        \App\Models\Product::create([
+            'name' => 'Performance Bundle',
+            'description' => 'Complete performance pack: 12 cans of Tribute Pro + 1 tub of Tribute Powder. Everything you need for peak performance.',
+            'price' => 79.99,
+            'original_price' => 99.99,
+            'color' => 'linear-gradient(135deg, #1A1A2E, #16213E)',
+            'rating' => 5,
+            'reviews' => 45,
+            'specs' => json_encode([
+                'Tribute Pro: 12 cans',
+                'Tribute Powder: 1 tub',
+                'Total Servings: 42',
+                'Savings: $20',
+                'Free Shipping: Yes',
+                'Gift Box: Included'
+            ]),
+            'category' => 'bundle',
+            'is_featured' => true,
+            'is_new' => false,
+            'is_sale' => true,
+            'is_active' => true
+        ]);
+
+        \App\Models\Product::create([
+            'name' => 'Starter Pack',
+            'description' => 'Perfect introduction to Tribute Energy: 4 cans each of Pro, Zero, Berry, and Citrus flavors.',
+            'price' => 19.99,
+            'original_price' => null,
+            'color' => 'linear-gradient(135deg, #4ECDC4, #44A08D)',
+            'rating' => 4,
+            'reviews' => 21,
+            'specs' => json_encode([
+                'Variety Pack: 16 cans',
+                'Flavors: 4 different',
+                'Caffeine: 200mg per can',
+                'Perfect for: Trying all flavors',
+                'Free Shipping: Yes',
+                'Sampler: Yes'
+            ]),
+            'category' => 'bundle',
+            'is_featured' => false,
+            'is_new' => true,
+            'is_sale' => false,
+            'is_active' => true
+        ]);
+
+        \App\Models\Product::create([
+            'name' => 'Tribute Night',
+            'description' => 'Recovery drink with magnesium, zinc, and melatonin for post-workout recovery and better sleep.',
+            'price' => 5.99,
+            'original_price' => null,
+            'color' => 'linear-gradient(135deg, #667eea, #764ba2)',
+            'rating' => 4,
+            'reviews' => 9,
+            'specs' => json_encode([
+                'Magnesium: 200mg',
+                'Zinc: 15mg',
+                'Melatonin: 3mg',
+                'Size: 12oz can',
+                'Caffeine: 0mg',
+                'Purpose: Recovery'
+            ]),
+            'category' => 'drink',
+            'is_featured' => false,
+            'is_new' => true,
+            'is_sale' => false,
             'is_active' => true
         ]);
     }
