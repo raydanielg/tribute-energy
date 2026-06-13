@@ -14,3 +14,7 @@ Route::get('/terms',    [PagesController::class, 'terms'])->name('terms');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('user.home')->middleware('auth');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+});
