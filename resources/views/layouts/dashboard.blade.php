@@ -529,46 +529,56 @@
             left: 0;
             top: 0;
             height: 100%;
-            width: 260px;
+            width: 280px;
             background: var(--sidebar);
             border-right: 1px solid var(--sidebar-border);
             z-index: 51;
-            box-shadow: 4px 0 16px rgba(0, 0, 0, 0.1);
+            box-shadow: 8px 0 32px rgba(0, 0, 0, 0.15);
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .mobile-sidebar.open {
             display: flex;
+            transform: translateX(0);
         }
 
         .mobile-overlay.open {
             display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .mobile-close {
             position: absolute;
-            right: 0.75rem;
-            top: 0.75rem;
+            right: 1rem;
+            top: 1rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 20px;
-            height: 20px;
-            border: none;
-            background: transparent;
+            width: 32px;
+            height: 32px;
+            border: 1px solid var(--border);
+            background: var(--card);
             color: var(--muted-foreground);
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: calc(var(--radius) - 2px);
             transition: all 0.15s ease;
         }
 
         .mobile-close:hover {
             background: var(--accent);
             color: var(--foreground);
+            border-color: var(--primary);
         }
 
         .mobile-close svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
         }
     </style>
 </head>
