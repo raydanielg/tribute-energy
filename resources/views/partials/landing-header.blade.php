@@ -53,6 +53,7 @@
                 <a href="/" class="block px-4 py-2.5 text-sm font-medium rounded-lg" style="color: #FF8C00; background: #fff7ed;">Home</a>
                 <a href="#features" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Features</a>
                 <a href="#projects" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Projects</a>
+                <a href="/products" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Products</a>
                 <a href="#partnerships" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Partners</a>
                 <a href="#contact" class="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">Contact</a>
                 <div class="pt-2 border-t border-gray-100 flex items-center space-x-3 px-1">
