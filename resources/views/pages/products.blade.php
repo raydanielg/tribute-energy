@@ -23,97 +23,96 @@
     </section>
 
     {{-- Shop Section --}}
-    <section class="py-12 max-w-7xl mx-auto px-5 lg:px-8" x-data="shopFilters()">
-        <div class="flex flex-col lg:flex-row gap-8">
+    <section class="py-8 max-w-7xl mx-auto px-5 lg:px-8" x-data="shopFilters()">
+        <div class="flex flex-col lg:flex-row gap-6">
             {{-- Sidebar Filters --}}
-            <div class="lg:w-64 flex-shrink-0">
-                <div class="bg-[#111] border border-[#1E1E1E] rounded-xl p-6 sticky top-24">
-                    <h3 class="font-rajdhani font-700 text-lg mb-4 text-white">Filters</h3>
+            <div class="lg:w-56 flex-shrink-0">
+                <div class="bg-[#0D0D0D] border border-[#1E1E1E] rounded-lg p-5 sticky top-20">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-rajdhani font-700 text-base text-white">Filters</h3>
+                        <button @click="resetFilters()" class="text-xs text-[#FF6B00] hover:text-white transition-colors">Reset</button>
+                    </div>
                     
                     {{-- Category Filter --}}
-                    <div class="mb-6">
-                        <h4 class="text-xs font-rajdhani font-700 tracking-wider uppercase text-gray-500 mb-3">Category</h4>
-                        <div class="space-y-2">
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                    <div class="mb-5">
+                        <h4 class="text-xs font-rajdhani font-700 tracking-wider uppercase text-gray-500 mb-2">Category</h4>
+                        <div class="space-y-1.5">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="category" value="all" x-model="filters.category" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">All Products</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">All Products</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="category" value="drink" x-model="filters.category" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Energy Drinks</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">Energy Drinks</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="category" value="powder" x-model="filters.category" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Powders</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">Powders</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="category" value="bundle" x-model="filters.category" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Bundles</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">Bundles</span>
                             </label>
                         </div>
                     </div>
 
                     {{-- Price Range Filter --}}
-                    <div class="mb-6">
-                        <h4 class="text-xs font-rajdhani font-700 tracking-wider uppercase text-gray-500 mb-3">Price Range</h4>
-                        <div class="space-y-2">
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                    <div class="mb-5">
+                        <h4 class="text-xs font-rajdhani font-700 tracking-wider uppercase text-gray-500 mb-2">Price Range</h4>
+                        <div class="space-y-1.5">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="price" value="all" x-model="filters.price" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">All Prices</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">All Prices</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="price" value="0-50" x-model="filters.price" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Under $50</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">Under $50</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="price" value="50-100" x-model="filters.price" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">$50 - $100</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">$50 - $100</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="price" value="100-200" x-model="filters.price" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">$100 - $200</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">$100 - $200</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="radio" name="price" value="200+" x-model="filters.price" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">$200+</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">$200+</span>
                             </label>
                         </div>
                     </div>
 
                     {{-- Special Filters --}}
-                    <div class="mb-6">
-                        <h4 class="text-xs font-rajdhani font-700 tracking-wider uppercase text-gray-500 mb-3">Special</h4>
-                        <div class="space-y-2">
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                    <div class="mb-5">
+                        <h4 class="text-xs font-rajdhani font-700 tracking-wider uppercase text-gray-500 mb-2">Special</h4>
+                        <div class="space-y-1.5">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="checkbox" x-model="filters.featured" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0 rounded">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Featured</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0 rounded">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">Featured</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="checkbox" x-model="filters.new" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0 rounded">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">New Arrivals</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0 rounded">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">New Arrivals</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
+                            <label class="flex items-center gap-2 cursor-pointer group">
                                 <input type="checkbox" x-model="filters.sale" @change="applyFilters()"
-                                       class="w-4 h-4 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0 rounded">
-                                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">On Sale</span>
+                                       class="w-3.5 h-3.5 text-[#FF6B00] border-gray-600 focus:ring-[#FF6B00] focus:ring-offset-0 rounded">
+                                <span class="text-xs text-gray-300 group-hover:text-white transition-colors">On Sale</span>
                             </label>
                         </div>
                     </div>
-
-                    <button @click="resetFilters()" class="w-full py-2.5 border border-[#252525] text-gray-400 hover:border-[#FF6B00] hover:text-white transition-colors text-sm font-rajdhani font-700 tracking-wider uppercase rounded-lg">
-                        Reset Filters
-                    </button>
                 </div>
             </div>
 
