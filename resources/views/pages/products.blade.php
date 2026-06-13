@@ -234,17 +234,17 @@
     </section>
 
     {{-- Promo Banner --}}
-    <section class="my-8 mx-5 lg:mx-auto max-w-7xl">
-        <div class="relative overflow-hidden border border-[#252525] p-6 lg:p-8 flex flex-col sm:flex-row items-center gap-4 justify-between"
+    <section class="my-8 lg:my-12 mx-5 lg:mx-auto max-w-7xl">
+        <div class="relative overflow-hidden border border-[#252525] p-6 lg:p-10 flex flex-col sm:flex-row items-center gap-4 lg:gap-6 justify-between"
              style="background: linear-gradient(135deg, #111 0%, #1A0800 100%);">
-            <div class="absolute right-0 top-0 bottom-0 w-48 pointer-events-none"
+            <div class="absolute right-0 top-0 bottom-0 w-48 lg:w-64 pointer-events-none"
                  style="background: radial-gradient(ellipse at right, rgba(255,107,0,0.12), transparent 70%);"></div>
             <div class="z-10">
-                <div class="section-label mb-1 text-xs">Bundle &amp; Save</div>
-                <h3 class="font-bebas text-2xl lg:text-3xl">BUY 3, GET 1 <span class="text-gradient">FREE</span></h3>
-                <p class="text-gray-400 text-xs mt-1">Mix and match any flavors. Applied automatically at checkout.</p>
+                <div class="section-label mb-1 lg:mb-2 text-xs lg:text-sm">Bundle &amp; Save</div>
+                <h3 class="font-bebas text-2xl lg:text-4xl">BUY 3, GET 1 <span class="text-gradient">FREE</span></h3>
+                <p class="text-gray-400 text-xs lg:text-sm mt-1 lg:mt-2">Mix and match any flavors. Applied automatically at checkout.</p>
             </div>
-            <a href="{{ route('products') }}" class="btn-primary flex-shrink-0 z-10 text-sm">
+            <a href="{{ route('products') }}" class="btn-primary flex-shrink-0 z-10 text-sm lg:text-base">
                 <span>Build My Bundle</span>
                 <i class="fas fa-boxes"></i>
             </a>
