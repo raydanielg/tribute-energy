@@ -140,10 +140,10 @@
                 </nav>
             </div>
 
-            <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200">
+            <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-orange-100 bg-white/50">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="flex items-center gap-3 px-4 py-3 rounded-lg text-red-600 hover:bg-red-50 w-full">
+                    <button type="submit" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 w-full transition-all duration-200 font-semibold">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
                         <span>Logout</span>
                     </button>
@@ -152,7 +152,7 @@
         </aside>
 
         {{-- Main Content --}}
-        <main class="flex-1 lg:ml-64 p-6">
+        <main class="flex-1 lg:ml-72 p-6 lg:p-8">
             @yield('content')
         </main>
     </div>
@@ -169,32 +169,37 @@
         <div class="absolute inset-0 bg-black/50" id="mobileSidebarOverlay"></div>
         <div class="absolute left-0 top-0 bottom-0 w-64 bg-white">
             <div class="p-6">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="w-12 h-12 rounded-full flex items-center justify-center font-semibold text-white" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
-                        {{ substr(auth()->user()->name, 0, 1) }}
-                    </div>
-                    <div>
-                        <div class="font-semibold text-gray-900">{{ auth()->user()->name }}</div>
-                        <div class="text-sm text-gray-500">{{ auth()->user()->email }}</div>
+                {{-- User Profile Card --}}
+                <div class="bg-white rounded-2xl p-6 shadow-lg mb-6 border border-orange-100">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center font-bold text-white text-xl shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                            {{ substr(auth()->user()->name, 0, 1) }}
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-900 text-lg">{{ auth()->user()->name }}</div>
+                            <div class="text-sm text-gray-500">{{ auth()->user()->email }}</div>
+                            <div class="text-xs text-orange-600 font-semibold mt-1">Customer</div>
+                        </div>
                     </div>
                 </div>
 
-                <nav class="space-y-1">
-                    <a href="{{ route('user.dashboard') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg {{ request()->is('user/dashboard') ? 'bg-orange-50 text-orange-600' : 'text-gray-700 hover:bg-gray-100' }}">
+                {{-- Navigation --}}
+                <nav class="space-y-2">
+                    <a href="{{ route('user.dashboard') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 {{ request()->is('user/dashboard') ? 'nav-item-active' : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600' }}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                        <span>Dashboard</span>
+                        <span class="font-semibold">Dashboard</span>
                     </a>
-                    <a href="{{ route('user.orders.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg {{ request()->is('user/orders*') ? 'bg-orange-50 text-orange-600' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <a href="{{ route('user.orders.index') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 {{ request()->is('user/orders*') ? 'nav-item-active' : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600' }}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-                        <span>My Orders</span>
+                        <span class="font-semibold">My Orders</span>
                     </a>
-                    <a href="{{ route('user.offers') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg {{ request()->is('user/offers') ? 'bg-orange-50 text-orange-600' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <a href="{{ route('user.offers') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 {{ request()->is('user/offers') ? 'nav-item-active' : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600' }}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4 2 2 0 010 4zm0 0v7m0-7a2 2 0 110-4 2 2 0 010 4zm0 0v7m0-7a2 2 0 110-4 2 2 0 010 4zm0 0v7"/></svg>
-                        <span>Special Offers</span>
+                        <span class="font-semibold">Special Offers</span>
                     </a>
-                    <a href="{{ route('user.profile') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg {{ request()->is('user/profile') ? 'bg-orange-50 text-orange-600' : 'text-gray-700 hover:bg-gray-100' }}">
+                    <a href="{{ route('user.profile') }}" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 {{ request()->is('user/profile') ? 'nav-item-active' : 'text-gray-700 hover:bg-orange-50 hover:text-orange-600' }}">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                        <span>Profile</span>
+                        <span class="font-semibold">Profile</span>
                     </a>
                 </nav>
             </div>
