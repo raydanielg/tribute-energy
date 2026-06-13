@@ -540,9 +540,6 @@
         <div class="auth-brand-side">
             <div class="auth-brand-inner">
                 <div class="auth-brand-top" data-aos="fade-right" data-aos-duration="1000">
-                    <div class="brand-icon" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="{{ asset('logo.png') }}" alt="Tribute Energy Logo" class="brand-logo-image">
-                    </div>
                 </div>
 
                 <div class="auth-brand-bottom">
