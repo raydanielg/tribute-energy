@@ -141,16 +141,15 @@
                         </div>
 
                         {{-- Quantity and Add to Cart --}}
-                        <div class="flex items-center gap-4 mb-8">
+                        <form action="{{ route('cart.add', $product->id) }}" method="POST" class="flex items-center gap-4 mb-8">
+                            @csrf
                             <div class="flex items-center gap-3">
-                                <button id="decreaseQty" class="w-12 h-12 rounded-lg bg-gray-100 hover:bg-gray-200 flex items-center justify-center font-semibold text-xl">-</button>
-                                <span id="productQty" class="w-16 text-center font-semibold text-xl">1</span>
-                                <button id="increaseQty" class="w-12 h-12 rounded-lg bg-gray-100 hover:bg-gray-200 flex items-center justify-center font-semibold text-xl">+</button>
+                                <input type="number" name="quantity" value="1" min="1" class="w-16 h-12 rounded-lg border border-gray-300 text-center font-semibold text-xl focus:outline-none focus:ring-2 focus:ring-orange-500">
                             </div>
-                            <button id="addToCartBtn" class="flex-1 py-4 text-white font-bold rounded-xl transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
+                            <button type="submit" class="flex-1 py-4 text-white font-bold rounded-xl transition-all duration-200 hover:shadow-lg" style="background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);">
                                 Add to Cart
                             </button>
-                        </div>
+                        </form>
 
                         {{-- Social Sharing --}}
                         <div>
