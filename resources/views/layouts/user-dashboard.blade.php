@@ -232,13 +232,29 @@
     </div>
 
     <script>
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('mobileSidebar').classList.remove('hidden');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+        const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+        const closeMobileSidebar = document.getElementById('closeMobileSidebar');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileSidebar.classList.remove('hidden');
+            setTimeout(() => {
+                mobileSidebar.querySelector('.mobile-sidebar').classList.add('open');
+                mobileSidebarOverlay.classList.add('open');
+            }, 10);
         });
 
-        document.getElementById('mobileSidebarOverlay').addEventListener('click', function() {
-            document.getElementById('mobileSidebar').classList.add('hidden');
-        });
+        function closeSidebar() {
+            mobileSidebar.querySelector('.mobile-sidebar').classList.remove('open');
+            mobileSidebarOverlay.classList.remove('open');
+            setTimeout(() => {
+                mobileSidebar.classList.add('hidden');
+            }, 300);
+        }
+
+        closeMobileSidebar.addEventListener('click', closeSidebar);
+        mobileSidebarOverlay.addEventListener('click', closeSidebar);
     </script>
 </body>
 </html>
