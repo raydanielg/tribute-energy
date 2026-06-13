@@ -131,7 +131,11 @@
                         </div>
                     </td>
                     <td>
-                        <span style="text-transform:capitalize;color:#64748b;">{{ $product->category ?? '—' }}</span>
+                        @if($product->category)
+                        <span style="text-transform:capitalize;color:#64748b;">{{ $product->category->name }}</span>
+                        @else
+                        <span style="color:#94a3b8;">—</span>
+                        @endif
                     </td>
                     <td>
                         <div style="font-weight:700;color:#FF6B00;">TZS {{ number_format($product->price) }}</div>
@@ -154,6 +158,8 @@
                             @if($product->is_featured) <span class="badge badge-orange">⭐ Featured</span> @endif
                             @if($product->is_new)      <span class="badge badge-blue">New</span>           @endif
                             @if($product->is_sale)     <span class="badge badge-purple">Sale</span>        @endif
+                            @if($product->stock <= 0)   <span class="badge badge-red">Out of Stock</span>     @endif
+                            @elseif($product->stock < 10) <span class="badge badge-orange">Low Stock ({{ $product->stock }})</span> @endif
                         </div>
                     </td>
                     <td>
