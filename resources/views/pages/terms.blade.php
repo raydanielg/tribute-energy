@@ -86,55 +86,55 @@
                 </div>
 
                 {{-- Privacy Policy --}}
-                <div id="privacy" class="scroll-mt-28 pt-8 border-t border-[#1A1A1A]" data-aos="fade-up">
+                <div id="privacy" class="scroll-mt-28 pt-8 border-t border-gray-200" data-aos="fade-up">
                     <h2 class="font-bebas text-4xl text-gradient mb-5">PRIVACY POLICY</h2>
                     <div class="divider mb-7"></div>
-                    <div class="space-y-5 text-gray-400 text-sm leading-relaxed">
+                    <div class="space-y-5 text-gray-600 text-sm leading-relaxed">
                         <p>Your privacy is important to us. This policy explains what data we collect, how we use it, and your rights regarding your personal information.</p>
 
-                        <h3 class="font-rajdhani font-700 text-base text-white mt-6 mb-2">Information We Collect</h3>
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mt-6 mb-2">Information We Collect</h3>
                         <ul class="space-y-2 ml-4">
-                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-300">Account Data:</strong> Name, email, address, and payment information provided during registration or checkout.</span></li>
-                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-300">Usage Data:</strong> Pages visited, products viewed, and actions taken on our site, collected via cookies and analytics tools.</span></li>
-                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-300">Communications:</strong> Messages sent to us via email or support tickets, stored to improve our service.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-700">Account Data:</strong> Name, email, address, and payment information provided during registration or checkout.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-700">Usage Data:</strong> Pages visited, products viewed, and actions taken on our site, collected via cookies and analytics tools.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-700">Communications:</strong> Messages sent to us via email or support tickets, stored to improve our service.</span></li>
                         </ul>
 
-                        <h3 class="font-rajdhani font-700 text-base text-white mt-6 mb-2">How We Use Your Data</h3>
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mt-6 mb-2">How We Use Your Data</h3>
                         <p>We use collected information to process orders, manage subscriptions, send transactional emails, improve our products and website experience, and (with your consent) send marketing communications. We never sell your personal data to third parties.</p>
 
-                        <h3 class="font-rajdhani font-700 text-base text-white mt-6 mb-2">Data Security</h3>
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mt-6 mb-2">Data Security</h3>
                         <p>All data is encrypted in transit (TLS 1.3) and at rest. Payment information is processed by PCI-DSS Level 1 certified providers. We conduct regular security audits and do not store raw card numbers on our servers.</p>
 
-                        <h3 class="font-rajdhani font-700 text-base text-white mt-6 mb-2">Your Rights</h3>
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mt-6 mb-2">Your Rights</h3>
                         <p>You have the right to access, correct, or delete your personal data at any time. Submit requests to privacy@tributeenergy.com. We will respond within 30 days. You may also opt out of marketing communications via the unsubscribe link in any email.</p>
                     </div>
                 </div>
 
                 {{-- Return Policy --}}
-                <div id="returns" class="scroll-mt-28 pt-8 border-t border-[#1A1A1A]" data-aos="fade-up">
+                <div id="returns" class="scroll-mt-28 pt-8 border-t border-gray-200" data-aos="fade-up">
                     <h2 class="font-bebas text-4xl text-gradient mb-5">RETURN POLICY</h2>
                     <div class="divider mb-7"></div>
-                    <div class="space-y-5 text-gray-400 text-sm leading-relaxed">
+                    <div class="space-y-5 text-gray-600 text-sm leading-relaxed">
                         <div class="bg-[#FF6B00]/10 border border-[#FF6B00]/20 p-5">
                             <p class="font-rajdhani font-700 text-[#FF6B00] text-sm tracking-wider uppercase mb-1">30-Day Money-Back Guarantee</p>
                             <p>Not satisfied with your purchase? We'll issue a full refund on your first order — no questions asked. This is our commitment to your satisfaction.</p>
                         </div>
-                        <h3 class="font-rajdhani font-700 text-base text-white mt-6 mb-2">Eligibility</h3>
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mt-6 mb-2">Eligibility</h3>
                         <ul class="space-y-2 ml-4">
                             <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span>Unopened products may be returned within 30 days of delivery for a full refund.</span></li>
                             <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span>Opened products are eligible for a one-time satisfaction refund on your first purchase only.</span></li>
                             <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span>Bundle and subscription items follow the same policy but require at least 7 days of use.</span></li>
                         </ul>
-                        <h3 class="font-rajdhani font-700 text-base text-white mt-6 mb-2">How to Initiate a Return</h3>
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mt-6 mb-2">How to Initiate a Return</h3>
                         <p>Email returns@tributeenergy.com with your order number and reason. Our team will provide a prepaid return label within 2 business days. Refunds are processed within 5-7 business days of receiving your return.</p>
                     </div>
                 </div>
 
                 {{-- Shipping Policy --}}
-                <div id="shipping" class="scroll-mt-28 pt-8 border-t border-[#1A1A1A]" data-aos="fade-up">
+                <div id="shipping" class="scroll-mt-28 pt-8 border-t border-gray-200" data-aos="fade-up">
                     <h2 class="font-bebas text-4xl text-gradient mb-5">SHIPPING POLICY</h2>
                     <div class="divider mb-7"></div>
-                    <div class="space-y-5 text-gray-400 text-sm leading-relaxed">
+                    <div class="space-y-5 text-gray-600 text-sm leading-relaxed">
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             @php
                             $shipping_tiers = [
@@ -144,15 +144,15 @@
                             ];
                             @endphp
                             @foreach($shipping_tiers as $tier)
-                            <div class="bg-[#111] border border-[#252525] p-4 text-center">
-                                <p class="font-rajdhani font-700 text-sm text-white">{{ $tier['type'] }}</p>
+                            <div class="bg-gray-50 border border-gray-200 p-4 text-center">
+                                <p class="font-rajdhani font-700 text-sm text-gray-900">{{ $tier['type'] }}</p>
                                 <p class="text-xs text-gray-500 mt-1">{{ $tier['time'] }}</p>
                                 <p class="font-bebas text-2xl text-[#FF6B00] mt-2">{{ $tier['price'] }}</p>
                             </div>
                             @endforeach
                         </div>
-                        <p><strong class="text-gray-300">Free Shipping:</strong> All US orders over $50 qualify for free standard shipping. Subscription members on Performance and Elite plans receive free shipping on every order.</p>
-                        <p><strong class="text-gray-300">International Shipping:</strong> We ship to 22+ countries. International orders may be subject to customs duties and taxes, which are the responsibility of the recipient.</p>
+                        <p><strong class="text-gray-700">Free Shipping:</strong> All US orders over $50 qualify for free standard shipping. Subscription members on Performance and Elite plans receive free shipping on every order.</p>
+                        <p><strong class="text-gray-700">International Shipping:</strong> We ship to 22+ countries. International orders may be subject to customs duties and taxes, which are the responsibility of the recipient.</p>
                     </div>
                 </div>
 
