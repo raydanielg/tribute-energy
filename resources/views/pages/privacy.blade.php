@@ -1,11 +1,11 @@
-@extends('layouts.landing')
+@extends('layouts.site')
 
 @section('title', 'Privacy Policy')
 @section('meta_description', 'Tribute Energy privacy policy — how we collect, use, and protect your data.')
 
 @section('content')
 
-    <section class="relative pt-32 pb-16 border-b border-[#1A1A1A]">
+    <section class="relative pt-32 pb-16 border-b border-gray-200 bg-white">
         <div class="relative z-10 max-w-4xl mx-auto px-5 lg:px-8">
             <div class="section-label mb-4">Legal</div>
             <h1 class="font-bebas text-6xl lg:text-8xl leading-none">
@@ -13,7 +13,7 @@
                 <span class="text-gradient">POLICY</span>
             </h1>
             <div class="divider mt-4 mb-5"></div>
-            <p class="text-gray-400 text-sm">Last updated: <strong class="text-gray-300">January 1, {{ date('Y') }}</strong></p>
+            <p class="text-gray-600 text-sm">Last updated: <strong class="text-gray-900">January 1, {{ date('Y') }}</strong></p>
         </div>
     </section>
 
