@@ -485,6 +485,17 @@
     });
     </script>
 
+    {{-- Floating WhatsApp --}}
+    <a href="https://wa.me/255787822735" target="_blank"
+       class="fixed bottom-6 right-6 z-[999] w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 animate__animated animate__fadeInUp animate__delay-1s"
+       style="background: linear-gradient(135deg, #25D366, #128C7E); box-shadow: 0 8px 32px rgba(37,211,102,0.4);"
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-3xl text-white"></i>
+        <span class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate__animated animate__pulse animate__infinite animate__slower">
+            <span class="text-white text-[9px] font-bold">&#9679;</span>
+        </span>
+    </a>
+
     @yield('scripts')
 </body>
 </html>
