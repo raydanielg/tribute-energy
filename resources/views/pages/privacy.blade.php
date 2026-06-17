@@ -18,15 +18,15 @@
     </section>
 
     <section class="py-16 max-w-4xl mx-auto px-5 lg:px-8">
-        <div class="space-y-8 text-gray-400 text-sm leading-relaxed" data-aos="fade-up">
+        <div class="space-y-8 text-gray-600 text-sm leading-relaxed" data-aos="fade-up">
             <p>Your privacy is important to us. This policy explains what data we collect, how we use it, and your rights regarding your personal information.</p>
 
             <div>
                 <h2 class="font-bebas text-3xl text-gradient mb-4">INFORMATION WE COLLECT</h2>
                 <ul class="space-y-3">
-                    <li class="flex items-start gap-3"><span class="text-[#FF6B00] mt-0.5">→</span><span><strong class="text-gray-300">Account Data:</strong> Name, email, address, and payment information provided during registration or checkout.</span></li>
-                    <li class="flex items-start gap-3"><span class="text-[#FF6B00] mt-0.5">→</span><span><strong class="text-gray-300">Usage Data:</strong> Pages visited, products viewed, and actions taken on our site, collected via cookies and analytics tools.</span></li>
-                    <li class="flex items-start gap-3"><span class="text-[#FF6B00] mt-0.5">→</span><span><strong class="text-gray-300">Communications:</strong> Messages sent to us via email or support tickets, stored to improve our service.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-[#FF6B00] mt-0.5">→</span><span><strong class="text-gray-700">Account Data:</strong> Name, email, address, and payment information provided during registration or checkout.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-[#FF6B00] mt-0.5">→</span><span><strong class="text-gray-700">Usage Data:</strong> Pages visited, products viewed, and actions taken on our site, collected via cookies and analytics tools.</span></li>
+                    <li class="flex items-start gap-3"><span class="text-[#FF6B00] mt-0.5">→</span><span><strong class="text-gray-700">Communications:</strong> Messages sent to us via email or support tickets, stored to improve our service.</span></li>
                 </ul>
             </div>
 
@@ -55,8 +55,8 @@
                 <p>For questions about this policy, contact our Data Protection Officer at <a href="mailto:privacy@tributeenergy.com" class="text-[#FF6B00] hover:underline">privacy@tributeenergy.com</a> or write to us at Tribute Energy LLC, 123 Performance Drive, Austin, TX 78701.</p>
             </div>
 
-            <div class="bg-[#111] border border-[#252525] p-6 mt-8">
-                <p class="font-rajdhani font-700 text-sm text-white mb-2"><i class="fas fa-shield-alt text-[#FF6B00] mr-2"></i>Your Privacy Matters</p>
+            <div class="bg-gray-50 border border-gray-200 p-6 mt-8">
+                <p class="font-rajdhani font-700 text-sm text-gray-900 mb-2"><i class="fas fa-shield-alt text-[#FF6B00] mr-2"></i>Your Privacy Matters</p>
                 <p class="text-xs">We believe in transparency. You have full control over your data and can request its deletion at any time. We will never sell your information.</p>
             </div>
         </div>

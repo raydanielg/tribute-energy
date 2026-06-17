@@ -1,4 +1,4 @@
-@extends('layouts.landing')
+@extends('layouts.site')
 
 @section('title', 'Terms & Privacy')
 @section('meta_description', 'Tribute Energy terms of service, privacy policy, and return policy.')
@@ -6,7 +6,7 @@
 @section('content')
 
     {{-- Hero --}}
-    <section class="relative pt-32 pb-16 border-b border-[#1A1A1A]">
+    <section class="relative pt-32 pb-16 border-b border-gray-200 bg-white">
         <div class="relative z-10 max-w-4xl mx-auto px-5 lg:px-8">
             <div class="section-label mb-4">Legal</div>
             <h1 class="font-bebas text-6xl lg:text-8xl leading-none">
@@ -14,8 +14,8 @@
                 <span class="text-gradient">PRIVACY POLICY</span>
             </h1>
             <div class="divider mt-4 mb-5"></div>
-            <p class="text-gray-400 text-sm">
-                Last updated: <strong class="text-gray-300">January 1, {{ date('Y') }}</strong>
+            <p class="text-gray-600 text-sm">
+                Last updated: <strong class="text-gray-900">January 1, {{ date('Y') }}</strong>
             </p>
         </div>
     </section>
@@ -39,7 +39,7 @@
                     @foreach($sections as $s)
                     <a href="#{{ $s['id'] }}"
                        class="flex items-center gap-3 px-4 py-3 text-sm font-rajdhani font-600 tracking-wide transition-all
-                              {{ $loop->first ? 'bg-[#FF6B00]/10 border-l-2 border-[#FF6B00] text-white' : 'text-gray-500 hover:text-white hover:bg-[#111] border-l-2 border-transparent hover:border-[#FF6B00]/50' }}">
+                              {{ $loop->first ? 'bg-[#FF6B00]/10 border-l-2 border-[#FF6B00] text-gray-900' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-[#FF6B00]/50' }}">
                         {{ $s['label'] }}
                     </a>
                     @endforeach
