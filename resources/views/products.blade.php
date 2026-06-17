@@ -353,4 +353,4 @@ document.getElementById('filterToggleBtn')?.addEventListener('click', function()
   }
 });
 </script>
-@endpush
+@endsection
