@@ -157,31 +157,31 @@
                 </div>
 
                 {{-- Cookie Policy --}}
-                <div id="cookies" class="scroll-mt-28 pt-8 border-t border-[#1A1A1A]" data-aos="fade-up">
+                <div id="cookies" class="scroll-mt-28 pt-8 border-t border-gray-200" data-aos="fade-up">
                     <h2 class="font-bebas text-4xl text-gradient mb-5">COOKIE POLICY</h2>
                     <div class="divider mb-7"></div>
-                    <div class="space-y-5 text-gray-400 text-sm leading-relaxed">
+                    <div class="space-y-5 text-gray-600 text-sm leading-relaxed">
                         <p>We use cookies and similar tracking technologies to enhance your browsing experience, analyze site traffic, and personalize content.</p>
-                        <h3 class="font-rajdhani font-700 text-base text-white mt-6 mb-2">Types of Cookies We Use</h3>
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mt-6 mb-2">Types of Cookies We Use</h3>
                         <ul class="space-y-3">
-                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-300">Essential Cookies:</strong> Required for basic site functionality including shopping cart and account login. Cannot be disabled.</span></li>
-                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-300">Analytics Cookies:</strong> Help us understand how visitors interact with our site. Collected anonymously via Google Analytics.</span></li>
-                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-300">Marketing Cookies:</strong> Used to show you relevant ads on other platforms. Can be opted out via our cookie settings.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-700">Essential Cookies:</strong> Required for basic site functionality including shopping cart and account login. Cannot be disabled.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-700">Analytics Cookies:</strong> Help us understand how visitors interact with our site. Collected anonymously via Google Analytics.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-[#FF6B00] mt-1">→</span><span><strong class="text-gray-700">Marketing Cookies:</strong> Used to show you relevant ads on other platforms. Can be opted out via our cookie settings.</span></li>
                         </ul>
                         <p>You can manage cookie preferences through your browser settings at any time. Note that disabling certain cookies may affect site functionality.</p>
                     </div>
                 </div>
 
                 {{-- Contact --}}
-                <div class="pt-8 border-t border-[#1A1A1A]" data-aos="fade-up">
-                    <div class="bg-[#111] border border-[#252525] p-7">
-                        <h3 class="font-rajdhani font-700 text-base text-white mb-3">Questions About These Policies?</h3>
-                        <p class="text-gray-400 text-sm mb-4">Our legal and support team is happy to help clarify anything in these documents.</p>
+                <div class="pt-8 border-t border-gray-200" data-aos="fade-up">
+                    <div class="bg-gray-50 border border-gray-200 p-7">
+                        <h3 class="font-rajdhani font-700 text-base text-gray-900 mb-3">Questions About These Policies?</h3>
+                        <p class="text-gray-600 text-sm mb-4">Our legal and support team is happy to help clarify anything in these documents.</p>
                         <div class="flex flex-wrap gap-4 text-sm">
                             <a href="mailto:legal@tributeenergy.com" class="text-[#FF6B00] hover:underline font-rajdhani font-600">
                                 <i class="fas fa-envelope mr-2"></i>legal@tributeenergy.com
                             </a>
-                            <span class="text-gray-600">·</span>
+                            <span class="text-gray-400">·</span>
                             <a href="mailto:privacy@tributeenergy.com" class="text-[#FF6B00] hover:underline font-rajdhani font-600">
                                 <i class="fas fa-shield-alt mr-2"></i>privacy@tributeenergy.com
                             </a>
