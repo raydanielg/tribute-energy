@@ -351,126 +351,164 @@
         }
     </script>
 
-    <style>
-        .cookie-overlay {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .cookie-overlay-bg {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.55);
-        }
-        body.cookie-blocked {
-            overflow: hidden !important;
-            height: 100vh !important;
-        }
-        .swal2-popup.cookie-swal {
-            border: 1px solid rgba(255,107,0,0.2) !important;
-            box-shadow: 0 0 80px rgba(255,107,0,0.15) !important;
-        }
-        .cookie-swal-title {
-            font-family: 'Bebas Neue', cursive !important;
-            font-size: 2.2rem !important;
-            letter-spacing: 2px !important;
-        }
-        .cookie-swal-text {
-            font-family: 'Inter', sans-serif !important;
-            font-size: 0.9rem !important;
-            color: #9ca3af !important;
-            line-height: 1.6 !important;
-        }
-        .cookie-swal-btn {
-            font-family: 'Rajdhani', sans-serif !important;
-            font-weight: 700 !important;
-            letter-spacing: 1.5px !important;
-            text-transform: uppercase !important;
-            font-size: 0.9rem !important;
-            padding: 12px 36px !important;
-            border-radius: 50px !important;
-            transition: all 0.3s ease !important;
-        }
-        .cookie-swal-btn:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 10px 40px rgba(255,107,0,0.4) !important;
-        }
-        .cookie-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 0.5rem;
-            background: linear-gradient(135deg, #FF6B00, #FFB800);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: #fff;
-            animation: cookie-pulse 2s ease-in-out infinite;
-        }
-        @keyframes cookie-pulse {
-            0%, 100% { box-shadow: 0 0 20px rgba(255,107,0,0.3); transform: scale(1); }
-            50% { box-shadow: 0 0 50px rgba(255,107,0,0.6); transform: scale(1.05); }
-        }
-    </style>
+    {{-- Cookie Banner --}}
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <p class="cookie-banner-text">
+                We use cookies to enhance your experience. By continuing, you agree to our
+                <a href="{{ route('privacy') }}">Privacy Policy</a>.
+            </p>
+            <div class="cookie-banner-actions">
+                <button onclick="acceptCookies()" class="cookie-btn-accept">
+                    <i class="fas fa-check"></i> Accept
+                </button>
+                <button onclick="declineCookies()" class="cookie-btn-decline">
+                    Decline
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const COOKIE_KEY = 'te_cookie_consent';
-        if (localStorage.getItem(COOKIE_KEY)) return;
-        document.body.classList.add('cookie-blocked');
-        Swal.fire({
-            html: `
-                <div class="cookie-icon">
-                    <i class="fas fa-cookie-bite"></i>
-                </div>
-                <h2 class="cookie-swal-title" style="margin-top:1rem;background:linear-gradient(135deg,#FF6B00,#FFB800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
-                    THIS SITE USES COOKIES
-                </h2>
-                <p class="cookie-swal-text" style="margin-top:0.5rem;max-width:420px;margin-left:auto;margin-right:auto;">
-                    We use cookies to enhance your browsing experience, analyze site traffic,
-                    and deliver personalized content. By clicking <strong style="color:#fff;">Accept</strong>,
-                    you consent to our use of cookies.
-                </p>
-                <div style="margin-top:1rem;display:flex;gap:0.75rem;justify-content:center;font-size:0.75rem;color:#555;font-family:Inter,sans-serif;">
-                    <a href="{{ route('terms') }}" style="color:#6b7280;text-decoration:underline;transition:color 0.3s;" onmouseover="this.style.color='#FF6B00'" onmouseout="this.style.color='#6b7280'">Privacy Policy</a>
-                    <span style="color:#333;">|</span>
-                    <a href="{{ route('terms') }}" style="color:#6b7280;text-decoration:underline;transition:color 0.3s;" onmouseover="this.style.color='#FF6B00'" onmouseout="this.style.color='#6b7280'">Terms of Service</a>
-                </div>
-            `,
-            icon: null,
-            showConfirmButton: true,
-            confirmButtonText: '<i class="fas fa-check-circle mr-2"></i> ACCEPT & CONTINUE',
-            confirmButtonColor: '#FF6B00',
-            allowOutsideClick: false,
-            allowEscapeKey: false,
-            allowEnterKey: true,
-            backdrop: false,
-            background: '#0F0F0F',
-            color: '#fff',
-            customClass: {
-                popup: 'cookie-swal',
-                confirmButton: 'cookie-swal-btn',
-            },
-            showClass: {
-                popup: 'animate__animated animate__zoomIn animate__faster'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__zoomOut animate__faster'
-            },
-        }).then(function(result) {
-            if (result.isConfirmed) {
-                localStorage.setItem(COOKIE_KEY, 'accepted');
-                document.body.classList.remove('cookie-blocked');
-                const overlay = document.getElementById('cookie-overlay');
-                if (overlay) overlay.style.display = 'none';
-            }
-        });
-    });
+    var COOKIE_KEY = 'te_cookie_consent';
+    function acceptCookies() {
+        localStorage.setItem(COOKIE_KEY, 'accepted');
+        document.getElementById('cookie-banner').classList.add('cookie-banner--hidden');
+    }
+    function declineCookies() {
+        localStorage.setItem(COOKIE_KEY, 'declined');
+        document.getElementById('cookie-banner').classList.add('cookie-banner--hidden');
+    }
+    (function() {
+        if (!localStorage.getItem(COOKIE_KEY)) {
+            setTimeout(function() {
+                document.getElementById('cookie-banner').classList.add('cookie-banner--show');
+            }, 600);
+        }
+    })();
     </script>
+
+    <style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 99998;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cookie-banner--show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .cookie-banner--hidden {
+        transform: translateY(100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+    .cookie-banner-inner {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 14px 24px;
+        margin: 0 auto 16px;
+        max-width: 800px;
+        background: rgba(15,15,15,0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 16px;
+        border: 1px solid rgba(255,255,255,0.06);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,107,0,0.05);
+    }
+    .cookie-banner-icon {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,180,0,0.1));
+        border: 1px solid rgba(255,107,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FF6B00;
+        font-size: 0.9rem;
+    }
+    .cookie-banner-text {
+        flex: 1;
+        font-size: 0.82rem;
+        color: rgba(255,255,255,0.7);
+        line-height: 1.5;
+        margin: 0;
+    }
+    .cookie-banner-text a {
+        color: #FF6B00;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    .cookie-banner-text a:hover {
+        color: #FFB800;
+    }
+    .cookie-banner-actions {
+        display: flex;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+    .cookie-btn-accept {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #FF6B00, #FF9000);
+        color: #fff;
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .cookie-btn-accept:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(255,107,0,0.4);
+    }
+    .cookie-btn-decline {
+        padding: 8px 16px;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 10px;
+        background: transparent;
+        color: rgba(255,255,255,0.4);
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .cookie-btn-decline:hover {
+        border-color: rgba(255,255,255,0.2);
+        color: rgba(255,255,255,0.7);
+        background: rgba(255,255,255,0.04);
+    }
+    @media (max-width: 640px) {
+        .cookie-banner-inner {
+            flex-direction: column;
+            text-align: center;
+            margin: 0 12px 12px;
+            padding: 16px;
+        }
+        .cookie-banner-actions {
+            width: 100%;
+        }
+        .cookie-btn-accept {
+            flex: 1;
+        }
+    }
+    </style>
 
     {{-- Floating WhatsApp --}}
     <a href="https://wa.me/255787822735" target="_blank"
