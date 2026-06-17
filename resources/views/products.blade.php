@@ -204,7 +204,7 @@
 </div>
 @endsection
 
-@push('scripts')
+@section('scripts')
 <script>
 // --- Product Modal ---
 let productsCache = null;
