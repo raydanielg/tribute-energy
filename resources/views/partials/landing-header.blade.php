@@ -53,32 +53,27 @@
                 <a href="{{ route('contact') }}" class="nav-link px-4 py-2 {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
             </div>
 
-            <div class="flex items-center space-x-1">
-                <a href="tel:+255787822735" class="hidden lg:flex items-center space-x-1.5 px-3 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                    <span>+255 787 822 735</span>
-                </a>
+            <div class="flex items-center space-x-0.5">
+                <button class="hidden lg:flex p-2 text-gray-500 hover:text-[#FF6B00] rounded-lg hover:bg-orange-50 transition-colors" onclick="document.getElementById('search-input').focus()">
+                    <i class="fas fa-search text-lg"></i>
+                </button>
 
-                <button x-on:click="open = !open" class="relative p-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 transition-colors">
+                <button x-on:click="open = !open" class="relative p-2 text-gray-500 hover:text-[#FF6B00] rounded-lg hover:bg-orange-50 transition-colors">
                     <i class="fas fa-shopping-bag text-lg"></i>
                     <span x-show="count > 0" class="absolute -top-0.5 -right-0.5 w-5 h-5 bg-[#FF6B00] text-white text-[10px] font-bold rounded-full flex items-center justify-center" x-text="count"></span>
                 </button>
 
-                <div class="hidden md:block w-px h-5 bg-gray-200 mx-1"></div>
+                <a href="https://wa.me/255787822735" target="_blank" class="p-2 text-gray-500 hover:text-[#25D366] rounded-lg hover:bg-green-50 transition-colors">
+                    <i class="fab fa-whatsapp text-lg"></i>
+                </a>
 
                 @auth
-                    <a href="{{ route('user.dashboard') }}" class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">Dashboard</a>
-                    <form action="{{ route('logout') }}" method="POST" class="inline">
-                        @csrf
-                        <button type="submit" class="px-4 py-2 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors">Logout</button>
-                    </form>
+                    <a href="{{ route('user.dashboard') }}" class="p-2 text-gray-500 hover:text-[#FF6B00] rounded-lg hover:bg-orange-50 transition-colors">
+                        <i class="fas fa-user text-lg"></i>
+                    </a>
                 @else
-                    <a href="{{ route('login') }}" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">Sign In</a>
-                    <a href="https://wa.me/255787822735" target="_blank" class="px-4 py-2 text-sm font-semibold text-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 ml-1 flex items-center gap-1.5" style="background: linear-gradient(135deg, #25D366, #128C7E);">
-                        <i class="fab fa-whatsapp"></i>
-                        WhatsApp Us
+                    <a href="{{ route('login') }}" class="p-2 text-gray-500 hover:text-[#FF6B00] rounded-lg hover:bg-orange-50 transition-colors">
+                        <i class="fas fa-user text-lg"></i>
                     </a>
                 @endauth
 
