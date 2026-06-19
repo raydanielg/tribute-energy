@@ -9,16 +9,22 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @php
             $partners = [
-                ['logo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/World_Vision_logo.svg/512px-World_Vision_logo.svg.png', 'name' => 'World Vision', 'desc' => 'Partnered on multiple solar water pumping projects including Karatu (2017), Kigoma (2018), and Hedaru (2016).'],
-                ['logo' => null, 'name' => 'RUWASA', 'desc' => 'Rural Water and Sanitation Authority - Long-term partner for rural water supply projects across Tanzania.'],
-                ['logo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Coat_of_arms_of_Tanzania.svg/512px-Coat_of_arms_of_Tanzania.svg.png', 'name' => 'Government of Tanzania', 'desc' => 'Strategic partner for national water infrastructure and renewable energy initiatives.'],
+                ['type' => 'worldvision', 'name' => 'World Vision', 'desc' => 'Partnered on multiple solar water pumping projects including Karatu (2017), Kigoma (2018), and Hedaru (2016).'],
+                ['type' => 'ruwasa', 'name' => 'RUWASA', 'desc' => 'Rural Water and Sanitation Authority - Long-term partner for rural water supply projects across Tanzania.'],
+                ['type' => 'tanzania', 'name' => 'Government of Tanzania', 'desc' => 'Strategic partner for national water infrastructure and renewable energy initiatives.'],
             ];
             @endphp
             @foreach($partners as $p)
             <div class="partnership-card p-6 rounded-2xl border border-gray-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg text-center bg-white">
                 <div class="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-gray-50 border border-gray-100 overflow-hidden">
-                    @if($p['logo'])
-                        <img src="{{ $p['logo'] }}" alt="{{ $p['name'] }} logo" class="w-full h-full object-contain p-2">
+                    @if($p['type'] === 'worldvision')
+                        <svg viewBox="0 0 100 100" class="w-full h-full p-2" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="48" fill="#1a365d"/>
+                            <path d="M50 18 L50 52 M32 32 L50 52 L68 32 M38 72 L50 52 L62 72" stroke="#ed8a19" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            <circle cx="50" cy="14" r="5" fill="#ed8a19"/>
+                        </svg>
+                    @elseif($p['type'] === 'tanzania')
+                        <img src="{{ asset('partners/tanzania-flag.png') }}" alt="{{ $p['name'] }} flag" class="w-full h-full object-cover">
                     @else
                         <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0f4c81] to-[#0a3a63] text-white">
                             <span class="text-[9px] font-bold tracking-wider uppercase leading-tight text-center">Rural Water<br>& Sanitation</span>
