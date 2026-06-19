@@ -24,26 +24,7 @@
                             <circle cx="50" cy="14" r="5" fill="#ed8a19"/>
                         </svg>
                     @elseif($p['type'] === 'tanzania')
-                        <svg viewBox="0 0 100 100" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M50 12 L85 25 L85 48 Q85 72 50 92 Q15 72 15 48 L15 25 Z" fill="#1a5c1a" stroke="#d4af37" stroke-width="2"/>
-                            <path d="M17 28 Q25 32 33 28 Q41 24 50 28 L50 50 L17 50 Z" fill="#1a5c1a" opacity="0.3"/>
-                            <path d="M20 35 Q28 39 36 35" stroke="#4a90d9" stroke-width="2" fill="none"/>
-                            <path d="M22 42 Q30 46 38 42" stroke="#4a90d9" stroke-width="2" fill="none"/>
-                            <path d="M83 28 Q75 32 67 28 Q59 24 50 28 L50 50 L83 50 Z" fill="#1a5c1a" opacity="0.3"/>
-                            <line x1="67" y1="48" x2="67" y2="32" stroke="#d4af37" stroke-width="2"/>
-                            <ellipse cx="67" cy="28" rx="4" ry="6" fill="#ff6b00"/>
-                            <ellipse cx="67" cy="24" rx="2.5" ry="4" fill="#ffcc00"/>
-                            <path d="M17 52 L50 52 L50 88 Q33 82 17 70 Z" fill="#1a5c1a" opacity="0.3"/>
-                            <line x1="28" y1="58" x2="42" y2="78" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
-                            <line x1="42" y1="58" x2="28" y2="78" stroke="#d4af37" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M50 52 L83 52 L83 70 Q67 82 50 88 Z" fill="#1a5c1a" opacity="0.3"/>
-                            <path d="M55 60 Q63 64 71 60" stroke="#4a90d9" stroke-width="2" fill="none"/>
-                            <path d="M57 68 Q65 72 73 68" stroke="#4a90d9" stroke-width="2" fill="none"/>
-                            <line x1="50" y1="12" x2="50" y2="92" stroke="#d4af37" stroke-width="1.5"/>
-                            <line x1="15" y1="50" x2="85" y2="50" stroke="#d4af37" stroke-width="1.5"/>
-                            <path d="M25 86 Q50 96 75 86" stroke="#d4af37" stroke-width="3" fill="none" stroke-linecap="round"/>
-                            <text x="50" y="93" font-size="5" fill="#d4af37" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold">UHURU NA UMOJA</text>
-                        </svg>
+                        <img src="{{ asset('partners/Coat_of_arms_of_Tanzania.svg') }}" alt="Coat of arms of Tanzania" class="w-full h-full object-contain p-1">
                     @else
                         <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0f4c81] to-[#0a3a63] text-white">
                             <span class="text-[9px] font-bold tracking-wider uppercase leading-tight text-center">Rural Water<br>& Sanitation</span>
