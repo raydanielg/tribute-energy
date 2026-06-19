@@ -24,7 +24,7 @@
                             <circle cx="50" cy="14" r="5" fill="#ed8a19"/>
                         </svg>
                     @elseif($p['type'] === 'tanzania')
-                        <img src="{{ asset('partners/Coat_of_arms_of_Tanzania.svg') }}" alt="Coat of arms of Tanzania" class="w-full h-full object-contain p-1">
+                        <img src="{{ asset('partners/image.png') }}" alt="Coat of arms of Tanzania" class="w-full h-full object-contain p-1">
                     @else
                         <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#0f4c81] to-[#0a3a63] text-white">
                             <span class="text-[9px] font-bold tracking-wider uppercase leading-tight text-center">Rural Water<br>& Sanitation</span>
