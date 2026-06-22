@@ -18,11 +18,7 @@
             <div class="partnership-card p-6 rounded-2xl border border-gray-100 hover:border-orange-200 transition-all duration-300 hover:shadow-lg text-center bg-white">
                 <div class="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-gray-50 border border-gray-100 overflow-hidden">
                     @if($p['type'] === 'worldvision')
-                        <svg viewBox="0 0 100 100" class="w-full h-full p-2" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="50" cy="50" r="48" fill="#1a365d"/>
-                            <path d="M50 18 L50 52 M32 32 L50 52 L68 32 M38 72 L50 52 L62 72" stroke="#ed8a19" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                            <circle cx="50" cy="14" r="5" fill="#ed8a19"/>
-                        </svg>
+                         <img src="{{ asset('partners/worldvision.png') }}" alt="World Vision" class="w-full h-full object-contain p-1">
                     @elseif($p['type'] === 'tanzania')
                         <img src="{{ asset('partners/image.png') }}" alt="Coat of arms of Tanzania" class="w-full h-full object-contain p-1">
                     @else
