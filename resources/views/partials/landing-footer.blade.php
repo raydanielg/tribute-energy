@@ -27,12 +27,12 @@
     <div class="max-w-screen-xl mx-auto px-4 lg:px-8 py-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
 
-            <div class="lg:col-span-2">
+            <div>
                 <a href="{{ route('home') }}" class="inline-flex items-center mb-4">
                     <img src="{{ asset('logo.png') }}" alt="Tribute Energy" class="h-12 w-auto object-contain brightness-0 invert">
                 </a>
             </div>
-             <div>
+             <div class="lg:col-span-2">
                 <p class="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
                     Tribute Energy delivers solar water pumping, hybrid power systems and water supply solutions
                     for homes, businesses and communities across Tanzania. Clean energy. Reliable water. Real impact.
@@ -42,9 +42,12 @@
                 <div class="flex items-center gap-3 mt-6">
                     <a href="https://www.instagram.com/tributenergy__?igsh=Y3lvYWY2NjN2a2Jx&utm_source=qr" target="_blank" class="w-9 h-9 rounded-full bg-white/5 hover:bg-orange-500 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-instagram"></i></a>
                     <a href="https://wa.me/255787822735" target="_blank" class="w-9 h-9 rounded-full bg-white/5 hover:bg-green-500 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-500 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-envelope"></i></a>
+                   <!-- 
                     <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-500 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-400 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="w-9 h-9 rounded-full bg-white/5 hover:bg-blue-600 hover:text-white flex items-center justify-center transition-colors"><i class="fab fa-linkedin-in"></i></a> 
+                    -->
                 </div>
             </div>
             <!--
