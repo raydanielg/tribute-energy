@@ -23,9 +23,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             @php
             $channels = [
-                ['icon' => 'fa-envelope', 'title' => 'Email Us', 'color' => '#FF6B00', 'detail' => 'support@tributeenergy.com', 'sub' => 'We reply within 24 hours'],
+                ['icon' => 'fa-envelope', 'title' => 'Email Us', 'color' => '#FF6B00', 'detail' => 'info@tributeenergy.com', 'sub' => 'We reply within 24 hours'],
                 ['icon' => 'fa-comment', 'title' => 'Live Chat', 'color' => '#00C851', 'detail' => 'Chat available 8AM-8PM EST', 'sub' => 'Monday through Friday'],
-                ['icon' => 'fa-phone', 'title' => 'Call Us', 'color' => '#0066FF', 'detail' => '+1 (800) 555-TRIBUTE', 'sub' => 'Mon-Fri, 9AM-6PM EST'],
+                ['icon' => 'fa-phone', 'title' => 'Call Us', 'color' => '#0066FF', 'detail' => '+255 787 822 735', 'sub' => 'Mon-Fri, 8AM-8PM EST'],
             ];
             @endphp
             @foreach($channels as $c)
