@@ -5,11 +5,6 @@
                 <i class="fas fa-envelope text-[10px]"></i>
                 <span class="hidden sm:inline">info@tributenergy.com</span>
             </a>
-            <span class="text-gray-700 hidden sm:block">|</span>
-            <a href="mailto:tributenergy@gmail.com" class="flex items-center gap-1.5 text-gray-400 hover:text-[#FF6B00] transition-colors">
-                <i class="fas fa-envelope text-[10px]"></i>
-                <span class="hidden sm:inline">tributenergy@gmail.com</span>
-            </a>
         </div>
         <div class="flex items-center gap-4 text-xs">
             <a href="tel:+255787822735" class="flex items-center gap-1.5 text-gray-400 hover:text-[#FF6B00] transition-colors">

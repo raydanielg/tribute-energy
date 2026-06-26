@@ -35,7 +35,7 @@
                     </svg>
                 </div>
                 <h3 class="text-xl font-bold text-white mb-2">Email</h3>
-                <p class="text-gray-300">tributenergy@gmail.com</p>
+                <p class="text-gray-300">info@tributenergy.com </p>
             </div>
         </div>
     </div>
